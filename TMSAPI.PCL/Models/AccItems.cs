@@ -17,25 +17,25 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class ACCITEMS : INotifyPropertyChanged 
+    public class AccItems : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<ACCITEM> aCCITEM;
+        private List<AccItem> accItem;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ACC_ITEM")]
-        public List<ACCITEM> ACCITEM 
+        [JsonProperty("AccItem")]
+        public List<AccItem> AccItem 
         { 
             get 
             {
-                return this.aCCITEM; 
+                return this.accItem; 
             } 
             set 
             {
-                this.aCCITEM = value;
-                onPropertyChanged("ACCITEM");
+                this.accItem = value;
+                onPropertyChanged("AccItem");
             }
         }
 

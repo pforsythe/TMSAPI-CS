@@ -17,25 +17,61 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class ACCCHARGES : INotifyPropertyChanged 
+    public class Error : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<ACCCHARGE> aCCCHARGE;
+        private int number = 1;
+        private string description;
+        private int severity;
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Error Number
         /// </summary>
-        [JsonProperty("ACC_CHARGE")]
-        public List<ACCCHARGE> ACCCHARGE 
+        [JsonProperty("Number")]
+        public int Number 
         { 
             get 
             {
-                return this.aCCCHARGE; 
+                return this.number; 
             } 
             set 
             {
-                this.aCCCHARGE = value;
-                onPropertyChanged("ACCCHARGE");
+                this.number = value;
+                onPropertyChanged("Number");
+            }
+        }
+
+        /// <summary>
+        /// Description of Error
+        /// </summary>
+        [JsonProperty("Description")]
+        public string Description 
+        { 
+            get 
+            {
+                return this.description; 
+            } 
+            set 
+            {
+                this.description = value;
+                onPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
+        /// Severity level of error
+        /// </summary>
+        [JsonProperty("Severity")]
+        public int Severity 
+        { 
+            get 
+            {
+                return this.severity; 
+            } 
+            set 
+            {
+                this.severity = value;
+                onPropertyChanged("Severity");
             }
         }
 

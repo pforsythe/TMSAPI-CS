@@ -17,43 +17,61 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class CONTAINER : INotifyPropertyChanged 
+    public class ShipmentReference : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string cONTAINERID;
-        private string dESCRIPTION;
+        private int referenceTypeId;
+        private string description;
+        private string reference;
 
         /// <summary>
-        /// Id of Container type
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CONTAINER_ID")]
-        public string CONTAINERID 
+        [JsonProperty("ReferenceTypeId")]
+        public int ReferenceTypeId 
         { 
             get 
             {
-                return this.cONTAINERID; 
+                return this.referenceTypeId; 
             } 
             set 
             {
-                this.cONTAINERID = value;
-                onPropertyChanged("CONTAINERID");
+                this.referenceTypeId = value;
+                onPropertyChanged("ReferenceTypeId");
             }
         }
 
         /// <summary>
-        /// Description of Container Type
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("DESCRIPTION")]
-        public string DESCRIPTION 
+        [JsonProperty("Description")]
+        public string Description 
         { 
             get 
             {
-                return this.dESCRIPTION; 
+                return this.description; 
             } 
             set 
             {
-                this.dESCRIPTION = value;
-                onPropertyChanged("DESCRIPTION");
+                this.description = value;
+                onPropertyChanged("Description");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("Reference")]
+        public string Reference 
+        { 
+            get 
+            {
+                return this.reference; 
+            } 
+            set 
+            {
+                this.reference = value;
+                onPropertyChanged("Reference");
             }
         }
 

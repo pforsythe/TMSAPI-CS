@@ -108,14 +108,14 @@ OtherController other = client.Other;
 
 
 ```csharp
-Task<ACCITEMS> GetAccessorials()
+Task<AccItems> GetAccessorials()
 ```
 
 #### Example Usage
 
 ```csharp
 
-ACCITEMS result = await other.GetAccessorials();
+AccItems result = await other.GetAccessorials();
 
 ```
 
@@ -126,7 +126,7 @@ ACCITEMS result = await other.GetAccessorials();
 
 
 ```csharp
-Task<ACCITEM> GetAccessorialByID(int aCCCHARGEID)
+Task<AccItem> GetAccessorialByID(int aCCCHARGEID)
 ```
 
 #### Parameters
@@ -139,9 +139,9 @@ Task<ACCITEM> GetAccessorialByID(int aCCCHARGEID)
 #### Example Usage
 
 ```csharp
-int aCCCHARGEID = 185;
+int aCCCHARGEID = 232;
 
-ACCITEM result = await other.GetAccessorialByID(aCCCHARGEID);
+AccItem result = await other.GetAccessorialByID(aCCCHARGEID);
 
 ```
 
@@ -152,14 +152,14 @@ ACCITEM result = await other.GetAccessorialByID(aCCCHARGEID);
 
 
 ```csharp
-Task<SHIPMENTREFERENCES> GetReferences()
+Task<ShipmentReferences> GetReferences()
 ```
 
 #### Example Usage
 
 ```csharp
 
-SHIPMENTREFERENCES result = await other.GetReferences();
+ShipmentReferences result = await other.GetReferences();
 
 ```
 
@@ -170,7 +170,7 @@ SHIPMENTREFERENCES result = await other.GetReferences();
 
 
 ```csharp
-Task<SHIPMENTREFERENCE> GetReferencesById(int referenceId)
+Task<ShipmentReference> GetReferencesById(int referenceId)
 ```
 
 #### Parameters
@@ -183,9 +183,9 @@ Task<SHIPMENTREFERENCE> GetReferencesById(int referenceId)
 #### Example Usage
 
 ```csharp
-int referenceId = 185;
+int referenceId = 232;
 
-SHIPMENTREFERENCE result = await other.GetReferencesById(referenceId);
+ShipmentReference result = await other.GetReferencesById(referenceId);
 
 ```
 
@@ -196,14 +196,14 @@ SHIPMENTREFERENCE result = await other.GetReferencesById(referenceId);
 
 
 ```csharp
-Task<List<CONTAINER>> GetContainerTypes()
+Task<List<Container>> GetContainerTypes()
 ```
 
 #### Example Usage
 
 ```csharp
 
-List<CONTAINER> result = await other.GetContainerTypes();
+List<Container> result = await other.GetContainerTypes();
 
 ```
 
@@ -214,7 +214,7 @@ List<CONTAINER> result = await other.GetContainerTypes();
 
 
 ```csharp
-Task<CONTAINER> GetContainerTypeById(string containerId)
+Task<Container> GetContainerTypeById(string containerId)
 ```
 
 #### Parameters
@@ -229,7 +229,7 @@ Task<CONTAINER> GetContainerTypeById(string containerId)
 ```csharp
 string containerId = "ContainerId";
 
-CONTAINER result = await other.GetContainerTypeById(containerId);
+Container result = await other.GetContainerTypeById(containerId);
 
 ```
 
@@ -240,14 +240,14 @@ CONTAINER result = await other.GetContainerTypeById(containerId);
 
 
 ```csharp
-Task<List<HAZMAT>> GetHazmat()
+Task<List<Hazmat>> GetHazmat()
 ```
 
 #### Example Usage
 
 ```csharp
 
-List<HAZMAT> result = await other.GetHazmat();
+List<Hazmat> result = await other.GetHazmat();
 
 ```
 
@@ -270,7 +270,7 @@ ShipmentController shipment = client.Shipment;
 
 
 ```csharp
-Task<SHIPMENT> GetShipmentDetails(string shipmentId)
+Task<Shipment> GetShipmentDetails(string shipmentId)
 ```
 
 #### Parameters
@@ -285,7 +285,7 @@ Task<SHIPMENT> GetShipmentDetails(string shipmentId)
 ```csharp
 string shipmentId = "ShipmentId";
 
-SHIPMENT result = await shipment.GetShipmentDetails(shipmentId);
+Shipment result = await shipment.GetShipmentDetails(shipmentId);
 
 ```
 
@@ -296,7 +296,7 @@ SHIPMENT result = await shipment.GetShipmentDetails(shipmentId);
 
 
 ```csharp
-Task<SHIPMENT> AddShipment(SHIPMENT shipment)
+Task<Shipment> AddShipment(Shipment shipment)
 ```
 
 #### Parameters
@@ -309,9 +309,9 @@ Task<SHIPMENT> AddShipment(SHIPMENT shipment)
 #### Example Usage
 
 ```csharp
-var shipment = new SHIPMENT();
+var shipment = new Shipment();
 
-SHIPMENT result = await shipment.AddShipment(shipment);
+Shipment result = await shipment.AddShipment(shipment);
 
 ```
 
@@ -352,7 +352,7 @@ bool result = await shipment.DeleteCancelShipment(shipmentId, userId, reason);
 
 
 ```csharp
-Task<SHIPMENT> UpdateShipment(SHIPMENT shipment)
+Task<Shipment> UpdateShipment(Shipment shipment)
 ```
 
 #### Parameters
@@ -365,9 +365,9 @@ Task<SHIPMENT> UpdateShipment(SHIPMENT shipment)
 #### Example Usage
 
 ```csharp
-var shipment = new SHIPMENT();
+var shipment = new Shipment();
 
-SHIPMENT result = await shipment.UpdateShipment(shipment);
+Shipment result = await shipment.UpdateShipment(shipment);
 
 ```
 
@@ -390,22 +390,22 @@ QuoteController quote = client.Quote;
 
 
 ```csharp
-Task<QUOTE> CreateGetQuote(QUOTE qUOTE)
+Task<Quote> CreateGetQuote(Quote quote)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| qUOTE |  ``` Required ```  | TODO: Add a parameter description |
+| quote |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var qUOTE = new QUOTE();
+var quote = new Quote();
 
-QUOTE result = await quote.CreateGetQuote(qUOTE);
+Quote result = await quote.CreateGetQuote(quote);
 
 ```
 
@@ -416,7 +416,7 @@ QUOTE result = await quote.CreateGetQuote(qUOTE);
 
 
 ```csharp
-Task<QUOTE> GetQuoteDetails(string quoteId)
+Task<Quote> GetQuoteDetails(string quoteId)
 ```
 
 #### Parameters
@@ -431,7 +431,7 @@ Task<QUOTE> GetQuoteDetails(string quoteId)
 ```csharp
 string quoteId = "QuoteId";
 
-QUOTE result = await quote.GetQuoteDetails(quoteId);
+Quote result = await quote.GetQuoteDetails(quoteId);
 
 ```
 
@@ -442,7 +442,7 @@ QUOTE result = await quote.GetQuoteDetails(quoteId);
 
 
 ```csharp
-Task<QUOTE> GetQuoteGroup(int quoteGroupId)
+Task<Quote> GetQuoteGroup(int quoteGroupId)
 ```
 
 #### Parameters
@@ -455,9 +455,9 @@ Task<QUOTE> GetQuoteGroup(int quoteGroupId)
 #### Example Usage
 
 ```csharp
-int quoteGroupId = 185;
+int quoteGroupId = 232;
 
-QUOTE result = await quote.GetQuoteGroup(quoteGroupId);
+Quote result = await quote.GetQuoteGroup(quoteGroupId);
 
 ```
 
@@ -480,14 +480,22 @@ OrderController order = client.Order;
 
 
 ```csharp
-Task<ORDER> AddOrder()
+Task<Order> AddOrder(Order order)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| order |  ``` Required ```  | TODO: Add a parameter description |
+
 
 #### Example Usage
 
 ```csharp
+var order = new Order();
 
-ORDER result = await order.AddOrder();
+Order result = await order.AddOrder(order);
 
 ```
 
@@ -498,7 +506,7 @@ ORDER result = await order.AddOrder();
 
 
 ```csharp
-Task<ORDER> GetOrderDetails(int orderUID)
+Task<Order> GetOrderDetails(int orderUID)
 ```
 
 #### Parameters
@@ -511,9 +519,9 @@ Task<ORDER> GetOrderDetails(int orderUID)
 #### Example Usage
 
 ```csharp
-int orderUID = 185;
+int orderUID = 232;
 
-ORDER result = await order.GetOrderDetails(orderUID);
+Order result = await order.GetOrderDetails(orderUID);
 
 ```
 
@@ -537,7 +545,7 @@ Task<bool> DeleteOrder(int orderUID)
 #### Example Usage
 
 ```csharp
-int orderUID = 185;
+int orderUID = 232;
 
 bool result = await order.DeleteOrder(orderUID);
 
@@ -550,7 +558,7 @@ bool result = await order.DeleteOrder(orderUID);
 
 
 ```csharp
-Task<ORDER> UpdateOrder(ORDER order)
+Task<Order> UpdateOrder(Order order)
 ```
 
 #### Parameters
@@ -563,9 +571,9 @@ Task<ORDER> UpdateOrder(ORDER order)
 #### Example Usage
 
 ```csharp
-var order = new ORDER();
+var order = new Order();
 
-ORDER result = await order.UpdateOrder(order);
+Order result = await order.UpdateOrder(order);
 
 ```
 
@@ -588,7 +596,7 @@ TrackingController tracking = client.Tracking;
 
 
 ```csharp
-Task<TRACKING> GetShipmentStatus(string referenceNumber)
+Task<Tracking> GetShipmentStatus(string referenceNumber)
 ```
 
 #### Parameters
@@ -603,7 +611,7 @@ Task<TRACKING> GetShipmentStatus(string referenceNumber)
 ```csharp
 string referenceNumber = "ReferenceNumber";
 
-TRACKING result = await tracking.GetShipmentStatus(referenceNumber);
+Tracking result = await tracking.GetShipmentStatus(referenceNumber);
 
 ```
 
@@ -614,7 +622,7 @@ TRACKING result = await tracking.GetShipmentStatus(referenceNumber);
 
 
 ```csharp
-Task<List<TRACKING>> CreateGetStatusOfMultipleShipments(List<string> trackingNumbers)
+Task<List<Tracking>> CreateGetStatusOfMultipleShipments(List<string> trackingNumbers)
 ```
 
 #### Parameters
@@ -629,7 +637,7 @@ Task<List<TRACKING>> CreateGetStatusOfMultipleShipments(List<string> trackingNum
 ```csharp
 List<string> trackingNumbers = new List<string> { "TrackingNumbers" };
 
-List<TRACKING> result = await tracking.CreateGetStatusOfMultipleShipments(trackingNumbers);
+List<Tracking> result = await tracking.CreateGetStatusOfMultipleShipments(trackingNumbers);
 
 ```
 

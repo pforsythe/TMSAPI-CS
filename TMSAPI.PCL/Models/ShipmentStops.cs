@@ -17,25 +17,25 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class ERRORS : INotifyPropertyChanged 
+    public class ShipmentStops : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<ERROR> eRROR;
+        private List<ShipmentStop> shipmentStop;
 
         /// <summary>
-        /// Collection of Errors Returned from Process
+        /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ERROR")]
-        public List<ERROR> ERROR 
+        [JsonProperty("ShipmentStop")]
+        public List<ShipmentStop> ShipmentStop 
         { 
             get 
             {
-                return this.eRROR; 
+                return this.shipmentStop; 
             } 
             set 
             {
-                this.eRROR = value;
-                onPropertyChanged("ERROR");
+                this.shipmentStop = value;
+                onPropertyChanged("ShipmentStop");
             }
         }
 

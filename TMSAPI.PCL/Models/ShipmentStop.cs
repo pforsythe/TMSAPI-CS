@@ -17,205 +17,241 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class ACCCHARGE : INotifyPropertyChanged 
+    public class ShipmentStop : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private int sTOPID;
-        private int rATETYPE;
-        private int cONTRACTID;
-        private int aCCCHARGEID;
-        private string dESCRIPTION;
-        private double cHARGE;
-        private double sELLCHARGE;
-        private double rESELLCHARGE;
-        private double mODIFIER;
-        private int sERVICELEVEL;
-        private string uPDATEDBY;
+        private int stopId;
+        private int stopSeqNumber;
+        private StopTypeEnum stopType;
+        private string name;
+        private string address1;
+        private string city;
+        private string state;
+        private int postalCode;
+        private string country;
+        private string contactName;
+        private string contactPhone;
+        private string contactFax;
+        private string address2;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("STOP_ID")]
-        public int STOPID 
+        [JsonProperty("StopId")]
+        public int StopId 
         { 
             get 
             {
-                return this.sTOPID; 
+                return this.stopId; 
             } 
             set 
             {
-                this.sTOPID = value;
-                onPropertyChanged("STOPID");
+                this.stopId = value;
+                onPropertyChanged("StopId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("RATE_TYPE")]
-        public int RATETYPE 
+        [JsonProperty("StopSeqNumber")]
+        public int StopSeqNumber 
         { 
             get 
             {
-                return this.rATETYPE; 
+                return this.stopSeqNumber; 
             } 
             set 
             {
-                this.rATETYPE = value;
-                onPropertyChanged("RATETYPE");
+                this.stopSeqNumber = value;
+                onPropertyChanged("StopSeqNumber");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CONTRACT_ID")]
-        public int CONTRACTID 
+        [JsonProperty("StopType", ItemConverterType = typeof(StringValuedEnumConverter))]
+        public StopTypeEnum StopType 
         { 
             get 
             {
-                return this.cONTRACTID; 
+                return this.stopType; 
             } 
             set 
             {
-                this.cONTRACTID = value;
-                onPropertyChanged("CONTRACTID");
+                this.stopType = value;
+                onPropertyChanged("StopType");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ACC_CHARGE_ID")]
-        public int ACCCHARGEID 
+        [JsonProperty("Name")]
+        public string Name 
         { 
             get 
             {
-                return this.aCCCHARGEID; 
+                return this.name; 
             } 
             set 
             {
-                this.aCCCHARGEID = value;
-                onPropertyChanged("ACCCHARGEID");
+                this.name = value;
+                onPropertyChanged("Name");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("DESCRIPTION")]
-        public string DESCRIPTION 
+        [JsonProperty("Address1")]
+        public string Address1 
         { 
             get 
             {
-                return this.dESCRIPTION; 
+                return this.address1; 
             } 
             set 
             {
-                this.dESCRIPTION = value;
-                onPropertyChanged("DESCRIPTION");
+                this.address1 = value;
+                onPropertyChanged("Address1");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CHARGE")]
-        public double CHARGE 
+        [JsonProperty("City")]
+        public string City 
         { 
             get 
             {
-                return this.cHARGE; 
+                return this.city; 
             } 
             set 
             {
-                this.cHARGE = value;
-                onPropertyChanged("CHARGE");
+                this.city = value;
+                onPropertyChanged("City");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SELL_CHARGE")]
-        public double SELLCHARGE 
+        [JsonProperty("State")]
+        public string State 
         { 
             get 
             {
-                return this.sELLCHARGE; 
+                return this.state; 
             } 
             set 
             {
-                this.sELLCHARGE = value;
-                onPropertyChanged("SELLCHARGE");
+                this.state = value;
+                onPropertyChanged("State");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("RESELL_CHARGE")]
-        public double RESELLCHARGE 
+        [JsonProperty("PostalCode")]
+        public int PostalCode 
         { 
             get 
             {
-                return this.rESELLCHARGE; 
+                return this.postalCode; 
             } 
             set 
             {
-                this.rESELLCHARGE = value;
-                onPropertyChanged("RESELLCHARGE");
+                this.postalCode = value;
+                onPropertyChanged("PostalCode");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("MODIFIER")]
-        public double MODIFIER 
+        [JsonProperty("Country")]
+        public string Country 
         { 
             get 
             {
-                return this.mODIFIER; 
+                return this.country; 
             } 
             set 
             {
-                this.mODIFIER = value;
-                onPropertyChanged("MODIFIER");
+                this.country = value;
+                onPropertyChanged("Country");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SERVICE_LEVEL")]
-        public int SERVICELEVEL 
+        [JsonProperty("ContactName")]
+        public string ContactName 
         { 
             get 
             {
-                return this.sERVICELEVEL; 
+                return this.contactName; 
             } 
             set 
             {
-                this.sERVICELEVEL = value;
-                onPropertyChanged("SERVICELEVEL");
+                this.contactName = value;
+                onPropertyChanged("ContactName");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("UPDATED_BY")]
-        public string UPDATEDBY 
+        [JsonProperty("ContactPhone")]
+        public string ContactPhone 
         { 
             get 
             {
-                return this.uPDATEDBY; 
+                return this.contactPhone; 
             } 
             set 
             {
-                this.uPDATEDBY = value;
-                onPropertyChanged("UPDATEDBY");
+                this.contactPhone = value;
+                onPropertyChanged("ContactPhone");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("ContactFax")]
+        public string ContactFax 
+        { 
+            get 
+            {
+                return this.contactFax; 
+            } 
+            set 
+            {
+                this.contactFax = value;
+                onPropertyChanged("ContactFax");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("Address2")]
+        public string Address2 
+        { 
+            get 
+            {
+                return this.address2; 
+            } 
+            set 
+            {
+                this.address2 = value;
+                onPropertyChanged("Address2");
             }
         }
 

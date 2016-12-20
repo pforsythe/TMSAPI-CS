@@ -17,57 +17,57 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class ORDER : INotifyPropertyChanged 
+    public class Order : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string oRDERID;
-        private string uSERID;
-        private DateTime rEADYDATE;
-        private bool rATEORDER = false;
-        private bool bOOKORDER = false;
-        private SHIPMENTSTOPS sTOPS;
-        private SHIPMENTPIECES pIECES;
-        private ACCITEMS aCCITEMS;
-        private SHIPMENTREFERENCES rEFERENCES;
-        private ERRORS eRRORS;
-        private int? oRDERUID;
-        private string sPECIALINSTRUCTIONS;
-        private string cOMMENTS;
-        private DateTime? dATENEEDED;
-        private string cARRIERSCAC;
-        private string oRDERSTATUS;
+        private string orderId;
+        private string userId;
+        private DateTime readyDate;
+        private bool rateOrder = false;
+        private bool bookOrder = false;
+        private ShipmentStops stops;
+        private ShipmentPieces pieces;
+        private AccItems accItems;
+        private ShipmentReferences references;
+        private Errors errors;
+        private int? orderUid;
+        private string specialInstructions;
+        private string comments;
+        private DateTime? dateNeeded;
+        private string carrierScac;
+        private string orderStatus;
 
         /// <summary>
         /// Id to import with order
         /// </summary>
-        [JsonProperty("ORDER_ID")]
-        public string ORDERID 
+        [JsonProperty("OrderId")]
+        public string OrderId 
         { 
             get 
             {
-                return this.oRDERID; 
+                return this.orderId; 
             } 
             set 
             {
-                this.oRDERID = value;
-                onPropertyChanged("ORDERID");
+                this.orderId = value;
+                onPropertyChanged("OrderId");
             }
         }
 
         /// <summary>
         /// User to save order under
         /// </summary>
-        [JsonProperty("USER_ID")]
-        public string USERID 
+        [JsonProperty("UserId")]
+        public string UserId 
         { 
             get 
             {
-                return this.uSERID; 
+                return this.userId; 
             } 
             set 
             {
-                this.uSERID = value;
-                onPropertyChanged("USERID");
+                this.userId = value;
+                onPropertyChanged("UserId");
             }
         }
 
@@ -75,187 +75,187 @@ namespace TMSAPI.PCL.Models
         /// Date order is ready for pickup
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("READY_DATE")]
-        public DateTime READYDATE 
+        [JsonProperty("ReadyDate")]
+        public DateTime ReadyDate 
         { 
             get 
             {
-                return this.rEADYDATE; 
+                return this.readyDate; 
             } 
             set 
             {
-                this.rEADYDATE = value;
-                onPropertyChanged("READYDATE");
+                this.readyDate = value;
+                onPropertyChanged("ReadyDate");
             }
         }
 
         /// <summary>
         /// If you want to pre rate this pending order
         /// </summary>
-        [JsonProperty("RATE_ORDER")]
-        public bool RATEORDER 
+        [JsonProperty("RateOrder")]
+        public bool RateOrder 
         { 
             get 
             {
-                return this.rATEORDER; 
+                return this.rateOrder; 
             } 
             set 
             {
-                this.rATEORDER = value;
-                onPropertyChanged("RATEORDER");
+                this.rateOrder = value;
+                onPropertyChanged("RateOrder");
             }
         }
 
         /// <summary>
         /// If you want to automatically book this order when submitted
         /// </summary>
-        [JsonProperty("BOOK_ORDER")]
-        public bool BOOKORDER 
+        [JsonProperty("BookOrder")]
+        public bool BookOrder 
         { 
             get 
             {
-                return this.bOOKORDER; 
+                return this.bookOrder; 
             } 
             set 
             {
-                this.bOOKORDER = value;
-                onPropertyChanged("BOOKORDER");
+                this.bookOrder = value;
+                onPropertyChanged("BookOrder");
             }
         }
 
         /// <summary>
         /// Stops for order
         /// </summary>
-        [JsonProperty("STOPS")]
-        public SHIPMENTSTOPS STOPS 
+        [JsonProperty("Stops")]
+        public ShipmentStops Stops 
         { 
             get 
             {
-                return this.sTOPS; 
+                return this.stops; 
             } 
             set 
             {
-                this.sTOPS = value;
-                onPropertyChanged("STOPS");
+                this.stops = value;
+                onPropertyChanged("Stops");
             }
         }
 
         /// <summary>
         /// Pieces to include on order
         /// </summary>
-        [JsonProperty("PIECES")]
-        public SHIPMENTPIECES PIECES 
+        [JsonProperty("Pieces")]
+        public ShipmentPieces Pieces 
         { 
             get 
             {
-                return this.pIECES; 
+                return this.pieces; 
             } 
             set 
             {
-                this.pIECES = value;
-                onPropertyChanged("PIECES");
+                this.pieces = value;
+                onPropertyChanged("Pieces");
             }
         }
 
         /// <summary>
         /// Any Accessorials needed for order
         /// </summary>
-        [JsonProperty("ACC_ITEMS")]
-        public ACCITEMS ACCITEMS 
+        [JsonProperty("AccItems")]
+        public AccItems AccItems 
         { 
             get 
             {
-                return this.aCCITEMS; 
+                return this.accItems; 
             } 
             set 
             {
-                this.aCCITEMS = value;
-                onPropertyChanged("ACCITEMS");
+                this.accItems = value;
+                onPropertyChanged("AccItems");
             }
         }
 
         /// <summary>
         /// Any References for the Order
         /// </summary>
-        [JsonProperty("REFERENCES")]
-        public SHIPMENTREFERENCES REFERENCES 
+        [JsonProperty("References")]
+        public ShipmentReferences References 
         { 
             get 
             {
-                return this.rEFERENCES; 
+                return this.references; 
             } 
             set 
             {
-                this.rEFERENCES = value;
-                onPropertyChanged("REFERENCES");
+                this.references = value;
+                onPropertyChanged("References");
             }
         }
 
         /// <summary>
         /// Any errors in processing
         /// </summary>
-        [JsonProperty("ERRORS")]
-        public ERRORS ERRORS 
+        [JsonProperty("Errors")]
+        public Errors Errors 
         { 
             get 
             {
-                return this.eRRORS; 
+                return this.errors; 
             } 
             set 
             {
-                this.eRRORS = value;
-                onPropertyChanged("ERRORS");
+                this.errors = value;
+                onPropertyChanged("Errors");
             }
         }
 
         /// <summary>
         /// Unique Id of Order
         /// </summary>
-        [JsonProperty("ORDER_UID")]
-        public int? ORDERUID 
+        [JsonProperty("OrderUid")]
+        public int? OrderUid 
         { 
             get 
             {
-                return this.oRDERUID; 
+                return this.orderUid; 
             } 
             set 
             {
-                this.oRDERUID = value;
-                onPropertyChanged("ORDERUID");
+                this.orderUid = value;
+                onPropertyChanged("OrderUid");
             }
         }
 
         /// <summary>
         /// Any Special Instructions for order
         /// </summary>
-        [JsonProperty("SPECIAL_INSTRUCTIONS")]
-        public string SPECIALINSTRUCTIONS 
+        [JsonProperty("SpecialInstructions")]
+        public string SpecialInstructions 
         { 
             get 
             {
-                return this.sPECIALINSTRUCTIONS; 
+                return this.specialInstructions; 
             } 
             set 
             {
-                this.sPECIALINSTRUCTIONS = value;
-                onPropertyChanged("SPECIALINSTRUCTIONS");
+                this.specialInstructions = value;
+                onPropertyChanged("SpecialInstructions");
             }
         }
 
         /// <summary>
         /// Any Comments about order
         /// </summary>
-        [JsonProperty("COMMENTS")]
-        public string COMMENTS 
+        [JsonProperty("Comments")]
+        public string Comments 
         { 
             get 
             {
-                return this.cOMMENTS; 
+                return this.comments; 
             } 
             set 
             {
-                this.cOMMENTS = value;
-                onPropertyChanged("COMMENTS");
+                this.comments = value;
+                onPropertyChanged("Comments");
             }
         }
 
@@ -263,51 +263,51 @@ namespace TMSAPI.PCL.Models
         /// Date Order is needed by
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("DATE_NEEDED")]
-        public DateTime? DATENEEDED 
+        [JsonProperty("DateNeeded")]
+        public DateTime? DateNeeded 
         { 
             get 
             {
-                return this.dATENEEDED; 
+                return this.dateNeeded; 
             } 
             set 
             {
-                this.dATENEEDED = value;
-                onPropertyChanged("DATENEEDED");
+                this.dateNeeded = value;
+                onPropertyChanged("DateNeeded");
             }
         }
 
         /// <summary>
         /// SCAC of carrier to use if you want to book the order with a particular carrier
         /// </summary>
-        [JsonProperty("CARRIER_SCAC")]
-        public string CARRIERSCAC 
+        [JsonProperty("CarrierScac")]
+        public string CarrierScac 
         { 
             get 
             {
-                return this.cARRIERSCAC; 
+                return this.carrierScac; 
             } 
             set 
             {
-                this.cARRIERSCAC = value;
-                onPropertyChanged("CARRIERSCAC");
+                this.carrierScac = value;
+                onPropertyChanged("CarrierScac");
             }
         }
 
         /// <summary>
         /// Status of the order
         /// </summary>
-        [JsonProperty("ORDER_STATUS")]
-        public string ORDERSTATUS 
+        [JsonProperty("OrderStatus")]
+        public string OrderStatus 
         { 
             get 
             {
-                return this.oRDERSTATUS; 
+                return this.orderStatus; 
             } 
             set 
             {
-                this.oRDERSTATUS = value;
-                onPropertyChanged("ORDERSTATUS");
+                this.orderStatus = value;
+                onPropertyChanged("OrderStatus");
             }
         }
 

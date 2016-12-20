@@ -17,38 +17,38 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class TRACKING : INotifyPropertyChanged 
+    public class Tracking : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string sTATUS;
-        private DateTime sTATUSDATE;
-        private string lASTLOCATION;
-        private string cARRIERSCAC;
-        private string cARRIERNAME;
-        private DateTime pICKUPDATE;
-        private DateTime eSTPICKUPDATE;
-        private DateTime eSTDELIVEREDDATE;
-        private string sHIPMENTID;
-        private string sIGNEDBY;
-        private string cARRIERPRO;
-        private string tRACKINGLINK;
-        private DateTime? dELIVEREDDATE;
-        private ERRORS eRRORS;
+        private string status;
+        private DateTime statusDate;
+        private string lastLocation;
+        private string carrierScac;
+        private string carrierName;
+        private DateTime pickupDate;
+        private DateTime estPickupDate;
+        private DateTime estDeliveredDate;
+        private string shipmentId;
+        private string signedBy;
+        private string carrierPro;
+        private string trackingLink;
+        private DateTime? deliveredDate;
+        private Errors errors;
 
         /// <summary>
         /// Last Status of Shipment
         /// </summary>
-        [JsonProperty("STATUS")]
-        public string STATUS 
+        [JsonProperty("Status")]
+        public string Status 
         { 
             get 
             {
-                return this.sTATUS; 
+                return this.status; 
             } 
             set 
             {
-                this.sTATUS = value;
-                onPropertyChanged("STATUS");
+                this.status = value;
+                onPropertyChanged("Status");
             }
         }
 
@@ -56,68 +56,68 @@ namespace TMSAPI.PCL.Models
         /// Date of last status update
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("STATUS_DATE")]
-        public DateTime STATUSDATE 
+        [JsonProperty("StatusDate")]
+        public DateTime StatusDate 
         { 
             get 
             {
-                return this.sTATUSDATE; 
+                return this.statusDate; 
             } 
             set 
             {
-                this.sTATUSDATE = value;
-                onPropertyChanged("STATUSDATE");
+                this.statusDate = value;
+                onPropertyChanged("StatusDate");
             }
         }
 
         /// <summary>
         /// Location of last status update
         /// </summary>
-        [JsonProperty("LAST_LOCATION")]
-        public string LASTLOCATION 
+        [JsonProperty("LastLocation")]
+        public string LastLocation 
         { 
             get 
             {
-                return this.lASTLOCATION; 
+                return this.lastLocation; 
             } 
             set 
             {
-                this.lASTLOCATION = value;
-                onPropertyChanged("LASTLOCATION");
+                this.lastLocation = value;
+                onPropertyChanged("LastLocation");
             }
         }
 
         /// <summary>
         /// SCAC of carrier on shipment
         /// </summary>
-        [JsonProperty("CARRIER_SCAC")]
-        public string CARRIERSCAC 
+        [JsonProperty("CarrierScac")]
+        public string CarrierScac 
         { 
             get 
             {
-                return this.cARRIERSCAC; 
+                return this.carrierScac; 
             } 
             set 
             {
-                this.cARRIERSCAC = value;
-                onPropertyChanged("CARRIERSCAC");
+                this.carrierScac = value;
+                onPropertyChanged("CarrierScac");
             }
         }
 
         /// <summary>
         /// Name of carrier on shipment
         /// </summary>
-        [JsonProperty("CARRIER_NAME")]
-        public string CARRIERNAME 
+        [JsonProperty("CarrierName")]
+        public string CarrierName 
         { 
             get 
             {
-                return this.cARRIERNAME; 
+                return this.carrierName; 
             } 
             set 
             {
-                this.cARRIERNAME = value;
-                onPropertyChanged("CARRIERNAME");
+                this.carrierName = value;
+                onPropertyChanged("CarrierName");
             }
         }
 
@@ -125,17 +125,17 @@ namespace TMSAPI.PCL.Models
         /// Date shipment was picked up
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("PICKUP_DATE")]
-        public DateTime PICKUPDATE 
+        [JsonProperty("PickupDate")]
+        public DateTime PickupDate 
         { 
             get 
             {
-                return this.pICKUPDATE; 
+                return this.pickupDate; 
             } 
             set 
             {
-                this.pICKUPDATE = value;
-                onPropertyChanged("PICKUPDATE");
+                this.pickupDate = value;
+                onPropertyChanged("PickupDate");
             }
         }
 
@@ -143,17 +143,17 @@ namespace TMSAPI.PCL.Models
         /// Date shipment was scheduled to be picked up
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("EST_PICKUP_DATE")]
-        public DateTime ESTPICKUPDATE 
+        [JsonProperty("EstPickupDate")]
+        public DateTime EstPickupDate 
         { 
             get 
             {
-                return this.eSTPICKUPDATE; 
+                return this.estPickupDate; 
             } 
             set 
             {
-                this.eSTPICKUPDATE = value;
-                onPropertyChanged("ESTPICKUPDATE");
+                this.estPickupDate = value;
+                onPropertyChanged("EstPickupDate");
             }
         }
 
@@ -161,85 +161,85 @@ namespace TMSAPI.PCL.Models
         /// Estimated delivery date of shipment
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("EST_DELIVERED_DATE")]
-        public DateTime ESTDELIVEREDDATE 
+        [JsonProperty("EstDeliveredDate")]
+        public DateTime EstDeliveredDate 
         { 
             get 
             {
-                return this.eSTDELIVEREDDATE; 
+                return this.estDeliveredDate; 
             } 
             set 
             {
-                this.eSTDELIVEREDDATE = value;
-                onPropertyChanged("ESTDELIVEREDDATE");
+                this.estDeliveredDate = value;
+                onPropertyChanged("EstDeliveredDate");
             }
         }
 
         /// <summary>
         /// Shipment Id or BOL number of shipment
         /// </summary>
-        [JsonProperty("SHIPMENT_ID")]
-        public string SHIPMENTID 
+        [JsonProperty("ShipmentId")]
+        public string ShipmentId 
         { 
             get 
             {
-                return this.sHIPMENTID; 
+                return this.shipmentId; 
             } 
             set 
             {
-                this.sHIPMENTID = value;
-                onPropertyChanged("SHIPMENTID");
+                this.shipmentId = value;
+                onPropertyChanged("ShipmentId");
             }
         }
 
         /// <summary>
         /// Name of person on Proof of Delivery
         /// </summary>
-        [JsonProperty("SIGNED_BY")]
-        public string SIGNEDBY 
+        [JsonProperty("SignedBy")]
+        public string SignedBy 
         { 
             get 
             {
-                return this.sIGNEDBY; 
+                return this.signedBy; 
             } 
             set 
             {
-                this.sIGNEDBY = value;
-                onPropertyChanged("SIGNEDBY");
+                this.signedBy = value;
+                onPropertyChanged("SignedBy");
             }
         }
 
         /// <summary>
         /// Pro number of shipment
         /// </summary>
-        [JsonProperty("CARRIER_PRO")]
-        public string CARRIERPRO 
+        [JsonProperty("CarrierPro")]
+        public string CarrierPro 
         { 
             get 
             {
-                return this.cARRIERPRO; 
+                return this.carrierPro; 
             } 
             set 
             {
-                this.cARRIERPRO = value;
-                onPropertyChanged("CARRIERPRO");
+                this.carrierPro = value;
+                onPropertyChanged("CarrierPro");
             }
         }
 
         /// <summary>
         /// Link to track shipment
         /// </summary>
-        [JsonProperty("TRACKING_LINK")]
-        public string TRACKINGLINK 
+        [JsonProperty("TrackingLink")]
+        public string TrackingLink 
         { 
             get 
             {
-                return this.tRACKINGLINK; 
+                return this.trackingLink; 
             } 
             set 
             {
-                this.tRACKINGLINK = value;
-                onPropertyChanged("TRACKINGLINK");
+                this.trackingLink = value;
+                onPropertyChanged("TrackingLink");
             }
         }
 
@@ -247,34 +247,34 @@ namespace TMSAPI.PCL.Models
         /// Delivery date of shipment
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("DELIVERED_DATE")]
-        public DateTime? DELIVEREDDATE 
+        [JsonProperty("DeliveredDate")]
+        public DateTime? DeliveredDate 
         { 
             get 
             {
-                return this.dELIVEREDDATE; 
+                return this.deliveredDate; 
             } 
             set 
             {
-                this.dELIVEREDDATE = value;
-                onPropertyChanged("DELIVEREDDATE");
+                this.deliveredDate = value;
+                onPropertyChanged("DeliveredDate");
             }
         }
 
         /// <summary>
         /// Any errors from tracking
         /// </summary>
-        [JsonProperty("ERRORS")]
-        public ERRORS ERRORS 
+        [JsonProperty("Errors")]
+        public Errors Errors 
         { 
             get 
             {
-                return this.eRRORS; 
+                return this.errors; 
             } 
             set 
             {
-                this.eRRORS = value;
-                onPropertyChanged("ERRORS");
+                this.errors = value;
+                onPropertyChanged("Errors");
             }
         }
 

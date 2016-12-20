@@ -54,10 +54,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get status of shipment
         /// </summary>
         /// <param name="referenceNumber">Required parameter: Shipment Id or Pro Number to look up shipment</param>
-        /// <return>Returns the TRACKING response from the API call</return>
-        public TRACKING GetShipmentStatus(string referenceNumber)
+        /// <return>Returns the Tracking response from the API call</return>
+        public Tracking GetShipmentStatus(string referenceNumber)
         {
-            Task<TRACKING> t = GetShipmentStatusAsync(referenceNumber);
+            Task<Tracking> t = GetShipmentStatusAsync(referenceNumber);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -66,8 +66,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get status of shipment
         /// </summary>
         /// <param name="referenceNumber">Required parameter: Shipment Id or Pro Number to look up shipment</param>
-        /// <return>Returns the TRACKING response from the API call</return>
-        public async Task<TRACKING> GetShipmentStatusAsync(string referenceNumber)
+        /// <return>Returns the Tracking response from the API call</return>
+        public async Task<Tracking> GetShipmentStatusAsync(string referenceNumber)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -104,7 +104,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<TRACKING>(_response.Body);
+                return APIHelper.JsonDeserialize<Tracking>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -116,10 +116,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get status of multiple shipments at once
         /// </summary>
         /// <param name="trackingNumbers">Required parameter: Shipment Ids or Reference Numbers of Shipments to track</param>
-        /// <return>Returns the List<TRACKING> response from the API call</return>
-        public List<TRACKING> CreateGetStatusOfMultipleShipments(List<string> trackingNumbers)
+        /// <return>Returns the List<Tracking> response from the API call</return>
+        public List<Tracking> CreateGetStatusOfMultipleShipments(List<string> trackingNumbers)
         {
-            Task<List<TRACKING>> t = CreateGetStatusOfMultipleShipmentsAsync(trackingNumbers);
+            Task<List<Tracking>> t = CreateGetStatusOfMultipleShipmentsAsync(trackingNumbers);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -128,8 +128,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get status of multiple shipments at once
         /// </summary>
         /// <param name="trackingNumbers">Required parameter: Shipment Ids or Reference Numbers of Shipments to track</param>
-        /// <return>Returns the List<TRACKING> response from the API call</return>
-        public async Task<List<TRACKING>> CreateGetStatusOfMultipleShipmentsAsync(List<string> trackingNumbers)
+        /// <return>Returns the List<Tracking> response from the API call</return>
+        public async Task<List<Tracking>> CreateGetStatusOfMultipleShipmentsAsync(List<string> trackingNumbers)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -164,7 +164,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<List<TRACKING>>(_response.Body);
+                return APIHelper.JsonDeserialize<List<Tracking>>(_response.Body);
             }
             catch (Exception _ex)
             {

@@ -17,61 +17,43 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class HAZMAT : INotifyPropertyChanged 
+    public class Container : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string hAZMATCLASS;
-        private string hAZMATCLASSNUMBER;
-        private string hAZMATCODE;
+        private string containerId;
+        private string description;
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Id of Container type
         /// </summary>
-        [JsonProperty("HAZMAT_CLASS")]
-        public string HAZMATCLASS 
+        [JsonProperty("ContainerId")]
+        public string ContainerId 
         { 
             get 
             {
-                return this.hAZMATCLASS; 
+                return this.containerId; 
             } 
             set 
             {
-                this.hAZMATCLASS = value;
-                onPropertyChanged("HAZMATCLASS");
+                this.containerId = value;
+                onPropertyChanged("ContainerId");
             }
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Description of Container Type
         /// </summary>
-        [JsonProperty("HAZMAT_CLASS_NUMBER")]
-        public string HAZMATCLASSNUMBER 
+        [JsonProperty("Description")]
+        public string Description 
         { 
             get 
             {
-                return this.hAZMATCLASSNUMBER; 
+                return this.description; 
             } 
             set 
             {
-                this.hAZMATCLASSNUMBER = value;
-                onPropertyChanged("HAZMATCLASSNUMBER");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("HAZMAT_CODE")]
-        public string HAZMATCODE 
-        { 
-            get 
-            {
-                return this.hAZMATCODE; 
-            } 
-            set 
-            {
-                this.hAZMATCODE = value;
-                onPropertyChanged("HAZMATCODE");
+                this.description = value;
+                onPropertyChanged("Description");
             }
         }
 

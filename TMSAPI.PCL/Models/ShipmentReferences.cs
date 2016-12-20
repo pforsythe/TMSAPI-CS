@@ -17,25 +17,25 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class SHIPMENTPIECES : INotifyPropertyChanged 
+    public class ShipmentReferences : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<SHIPMENTPIECE> sHIPMENTPIECE;
+        private List<ShipmentReference> shipmentReference;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SHIPMENT_PIECE")]
-        public List<SHIPMENTPIECE> SHIPMENTPIECE 
+        [JsonProperty("ShipmentReference")]
+        public List<ShipmentReference> ShipmentReference 
         { 
             get 
             {
-                return this.sHIPMENTPIECE; 
+                return this.shipmentReference; 
             } 
             set 
             {
-                this.sHIPMENTPIECE = value;
-                onPropertyChanged("SHIPMENTPIECE");
+                this.shipmentReference = value;
+                onPropertyChanged("ShipmentReference");
             }
         }
 

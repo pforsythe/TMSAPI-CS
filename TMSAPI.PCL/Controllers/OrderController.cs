@@ -53,10 +53,11 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Add new Pending Order
         /// </summary>
-        /// <return>Returns the ORDER response from the API call</return>
-        public ORDER AddOrder()
+        /// <param name="order">Required parameter: Example: </param>
+        /// <return>Returns the Order response from the API call</return>
+        public Order AddOrder(Order order)
         {
-            Task<ORDER> t = AddOrderAsync();
+            Task<Order> t = AddOrderAsync(order);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -64,8 +65,9 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Add new Pending Order
         /// </summary>
-        /// <return>Returns the ORDER response from the API call</return>
-        public async Task<ORDER> AddOrderAsync()
+        /// <param name="order">Required parameter: Example: </param>
+        /// <return>Returns the Order response from the API call</return>
+        public async Task<Order> AddOrderAsync(Order order)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -82,11 +84,15 @@ namespace TMSAPI.PCL.Controllers
             var _headers = new Dictionary<string,string>()
             {
                 { "user-agent", "APIMATIC 2.0" },
-                { "accept", "application/json" }
+                { "accept", "application/json" },
+                { "content-type", "application/json; charset=utf-8" }
             };
 
+            //append body params
+            var _body = APIHelper.JsonSerialize(order);
+
             //prepare the API call request to fetch the response
-            HttpRequest _request = ClientInstance.Post(_queryUrl, _headers, null, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
+            HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
 
             //invoke request and get response
             HttpStringResponse _response = (HttpStringResponse) await ClientInstance.ExecuteAsStringAsync(_request).ConfigureAwait(false);
@@ -96,7 +102,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<ORDER>(_response.Body);
+                return APIHelper.JsonDeserialize<Order>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -108,10 +114,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of Order
         /// </summary>
         /// <param name="orderUID">Required parameter: Uid of Order to get details on</param>
-        /// <return>Returns the ORDER response from the API call</return>
-        public ORDER GetOrderDetails(int orderUID)
+        /// <return>Returns the Order response from the API call</return>
+        public Order GetOrderDetails(int orderUID)
         {
-            Task<ORDER> t = GetOrderDetailsAsync(orderUID);
+            Task<Order> t = GetOrderDetailsAsync(orderUID);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -120,8 +126,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of Order
         /// </summary>
         /// <param name="orderUID">Required parameter: Uid of Order to get details on</param>
-        /// <return>Returns the ORDER response from the API call</return>
-        public async Task<ORDER> GetOrderDetailsAsync(int orderUID)
+        /// <return>Returns the Order response from the API call</return>
+        public async Task<Order> GetOrderDetailsAsync(int orderUID)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -158,7 +164,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<ORDER>(_response.Body);
+                return APIHelper.JsonDeserialize<Order>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -231,10 +237,10 @@ namespace TMSAPI.PCL.Controllers
         /// Update Existing Order
         /// </summary>
         /// <param name="order">Required parameter: Example: </param>
-        /// <return>Returns the ORDER response from the API call</return>
-        public ORDER UpdateOrder(ORDER order)
+        /// <return>Returns the Order response from the API call</return>
+        public Order UpdateOrder(Order order)
         {
-            Task<ORDER> t = UpdateOrderAsync(order);
+            Task<Order> t = UpdateOrderAsync(order);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -243,8 +249,8 @@ namespace TMSAPI.PCL.Controllers
         /// Update Existing Order
         /// </summary>
         /// <param name="order">Required parameter: Example: </param>
-        /// <return>Returns the ORDER response from the API call</return>
-        public async Task<ORDER> UpdateOrderAsync(ORDER order)
+        /// <return>Returns the Order response from the API call</return>
+        public async Task<Order> UpdateOrderAsync(Order order)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -279,7 +285,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<ORDER>(_response.Body);
+                return APIHelper.JsonDeserialize<Order>(_response.Body);
             }
             catch (Exception _ex)
             {

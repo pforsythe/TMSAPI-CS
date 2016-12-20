@@ -53,10 +53,10 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get list of all available accessorials
         /// </summary>
-        /// <return>Returns the ACCITEMS response from the API call</return>
-        public ACCITEMS GetAccessorials()
+        /// <return>Returns the AccItems response from the API call</return>
+        public AccItems GetAccessorials()
         {
-            Task<ACCITEMS> t = GetAccessorialsAsync();
+            Task<AccItems> t = GetAccessorialsAsync();
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -64,8 +64,8 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get list of all available accessorials
         /// </summary>
-        /// <return>Returns the ACCITEMS response from the API call</return>
-        public async Task<ACCITEMS> GetAccessorialsAsync()
+        /// <return>Returns the AccItems response from the API call</return>
+        public async Task<AccItems> GetAccessorialsAsync()
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -96,7 +96,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<ACCITEMS>(_response.Body);
+                return APIHelper.JsonDeserialize<AccItems>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -108,10 +108,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get a Single Accessorial By Id
         /// </summary>
         /// <param name="aCCCHARGEID">Required parameter: Example: </param>
-        /// <return>Returns the ACCITEM response from the API call</return>
-        public ACCITEM GetAccessorialByID(int aCCCHARGEID)
+        /// <return>Returns the AccItem response from the API call</return>
+        public AccItem GetAccessorialByID(int aCCCHARGEID)
         {
-            Task<ACCITEM> t = GetAccessorialByIDAsync(aCCCHARGEID);
+            Task<AccItem> t = GetAccessorialByIDAsync(aCCCHARGEID);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -120,8 +120,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get a Single Accessorial By Id
         /// </summary>
         /// <param name="aCCCHARGEID">Required parameter: Example: </param>
-        /// <return>Returns the ACCITEM response from the API call</return>
-        public async Task<ACCITEM> GetAccessorialByIDAsync(int aCCCHARGEID)
+        /// <return>Returns the AccItem response from the API call</return>
+        public async Task<AccItem> GetAccessorialByIDAsync(int aCCCHARGEID)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -158,7 +158,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<ACCITEM>(_response.Body);
+                return APIHelper.JsonDeserialize<AccItem>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -169,10 +169,10 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get the list of Reference Types
         /// </summary>
-        /// <return>Returns the SHIPMENTREFERENCES response from the API call</return>
-        public SHIPMENTREFERENCES GetReferences()
+        /// <return>Returns the ShipmentReferences response from the API call</return>
+        public ShipmentReferences GetReferences()
         {
-            Task<SHIPMENTREFERENCES> t = GetReferencesAsync();
+            Task<ShipmentReferences> t = GetReferencesAsync();
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -180,8 +180,8 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get the list of Reference Types
         /// </summary>
-        /// <return>Returns the SHIPMENTREFERENCES response from the API call</return>
-        public async Task<SHIPMENTREFERENCES> GetReferencesAsync()
+        /// <return>Returns the ShipmentReferences response from the API call</return>
+        public async Task<ShipmentReferences> GetReferencesAsync()
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -212,7 +212,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<SHIPMENTREFERENCES>(_response.Body);
+                return APIHelper.JsonDeserialize<ShipmentReferences>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -224,10 +224,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get single reference by id
         /// </summary>
         /// <param name="referenceId">Required parameter: Reference Id of Reference to get details for</param>
-        /// <return>Returns the SHIPMENTREFERENCE response from the API call</return>
-        public SHIPMENTREFERENCE GetReferencesById(int referenceId)
+        /// <return>Returns the ShipmentReference response from the API call</return>
+        public ShipmentReference GetReferencesById(int referenceId)
         {
-            Task<SHIPMENTREFERENCE> t = GetReferencesByIdAsync(referenceId);
+            Task<ShipmentReference> t = GetReferencesByIdAsync(referenceId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -236,8 +236,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get single reference by id
         /// </summary>
         /// <param name="referenceId">Required parameter: Reference Id of Reference to get details for</param>
-        /// <return>Returns the SHIPMENTREFERENCE response from the API call</return>
-        public async Task<SHIPMENTREFERENCE> GetReferencesByIdAsync(int referenceId)
+        /// <return>Returns the ShipmentReference response from the API call</return>
+        public async Task<ShipmentReference> GetReferencesByIdAsync(int referenceId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -274,7 +274,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<SHIPMENTREFERENCE>(_response.Body);
+                return APIHelper.JsonDeserialize<ShipmentReference>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -285,10 +285,10 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get collection of Container Types
         /// </summary>
-        /// <return>Returns the List<CONTAINER> response from the API call</return>
-        public List<CONTAINER> GetContainerTypes()
+        /// <return>Returns the List<Container> response from the API call</return>
+        public List<Container> GetContainerTypes()
         {
-            Task<List<CONTAINER>> t = GetContainerTypesAsync();
+            Task<List<Container>> t = GetContainerTypesAsync();
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -296,8 +296,8 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get collection of Container Types
         /// </summary>
-        /// <return>Returns the List<CONTAINER> response from the API call</return>
-        public async Task<List<CONTAINER>> GetContainerTypesAsync()
+        /// <return>Returns the List<Container> response from the API call</return>
+        public async Task<List<Container>> GetContainerTypesAsync()
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -328,7 +328,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<List<CONTAINER>>(_response.Body);
+                return APIHelper.JsonDeserialize<List<Container>>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -340,10 +340,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get a single container type by its Id
         /// </summary>
         /// <param name="containerId">Required parameter: Container Id for container type requested</param>
-        /// <return>Returns the CONTAINER response from the API call</return>
-        public CONTAINER GetContainerTypeById(string containerId)
+        /// <return>Returns the Container response from the API call</return>
+        public Container GetContainerTypeById(string containerId)
         {
-            Task<CONTAINER> t = GetContainerTypeByIdAsync(containerId);
+            Task<Container> t = GetContainerTypeByIdAsync(containerId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -352,8 +352,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get a single container type by its Id
         /// </summary>
         /// <param name="containerId">Required parameter: Container Id for container type requested</param>
-        /// <return>Returns the CONTAINER response from the API call</return>
-        public async Task<CONTAINER> GetContainerTypeByIdAsync(string containerId)
+        /// <return>Returns the Container response from the API call</return>
+        public async Task<Container> GetContainerTypeByIdAsync(string containerId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -390,7 +390,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<CONTAINER>(_response.Body);
+                return APIHelper.JsonDeserialize<Container>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -401,10 +401,10 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get Hazmat details
         /// </summary>
-        /// <return>Returns the List<HAZMAT> response from the API call</return>
-        public List<HAZMAT> GetHazmat()
+        /// <return>Returns the List<Hazmat> response from the API call</return>
+        public List<Hazmat> GetHazmat()
         {
-            Task<List<HAZMAT>> t = GetHazmatAsync();
+            Task<List<Hazmat>> t = GetHazmatAsync();
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -412,8 +412,8 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get Hazmat details
         /// </summary>
-        /// <return>Returns the List<HAZMAT> response from the API call</return>
-        public async Task<List<HAZMAT>> GetHazmatAsync()
+        /// <return>Returns the List<Hazmat> response from the API call</return>
+        public async Task<List<Hazmat>> GetHazmatAsync()
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -444,7 +444,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<List<HAZMAT>>(_response.Body);
+                return APIHelper.JsonDeserialize<List<Hazmat>>(_response.Body);
             }
             catch (Exception _ex)
             {

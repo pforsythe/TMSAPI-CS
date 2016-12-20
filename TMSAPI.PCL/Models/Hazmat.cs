@@ -17,25 +17,61 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class SHIPMENTSTOPS : INotifyPropertyChanged 
+    public class Hazmat : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<SHIPMENTSTOP> sHIPMENTSTOP;
+        private string hazmatClass;
+        private string hazmatClassNum;
+        private string hazmatCode;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SHIPMENT_STOP")]
-        public List<SHIPMENTSTOP> SHIPMENTSTOP 
+        [JsonProperty("HazmatClass")]
+        public string HazmatClass 
         { 
             get 
             {
-                return this.sHIPMENTSTOP; 
+                return this.hazmatClass; 
             } 
             set 
             {
-                this.sHIPMENTSTOP = value;
-                onPropertyChanged("SHIPMENTSTOP");
+                this.hazmatClass = value;
+                onPropertyChanged("HazmatClass");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("HazmatClassNum")]
+        public string HazmatClassNum 
+        { 
+            get 
+            {
+                return this.hazmatClassNum; 
+            } 
+            set 
+            {
+                this.hazmatClassNum = value;
+                onPropertyChanged("HazmatClassNum");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("HazmatCode")]
+        public string HazmatCode 
+        { 
+            get 
+            {
+                return this.hazmatCode; 
+            } 
+            set 
+            {
+                this.hazmatCode = value;
+                onPropertyChanged("HazmatCode");
             }
         }
 

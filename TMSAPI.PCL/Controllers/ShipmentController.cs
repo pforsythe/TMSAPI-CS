@@ -54,10 +54,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of Shipment
         /// </summary>
         /// <param name="shipmentId">Required parameter: Shipment Id to pull shipment info</param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public SHIPMENT GetShipmentDetails(string shipmentId)
+        /// <return>Returns the Shipment response from the API call</return>
+        public Shipment GetShipmentDetails(string shipmentId)
         {
-            Task<SHIPMENT> t = GetShipmentDetailsAsync(shipmentId);
+            Task<Shipment> t = GetShipmentDetailsAsync(shipmentId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -66,8 +66,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of Shipment
         /// </summary>
         /// <param name="shipmentId">Required parameter: Shipment Id to pull shipment info</param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public async Task<SHIPMENT> GetShipmentDetailsAsync(string shipmentId)
+        /// <return>Returns the Shipment response from the API call</return>
+        public async Task<Shipment> GetShipmentDetailsAsync(string shipmentId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -104,7 +104,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<SHIPMENT>(_response.Body);
+                return APIHelper.JsonDeserialize<Shipment>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -116,10 +116,10 @@ namespace TMSAPI.PCL.Controllers
         /// Add a Shipment to system
         /// </summary>
         /// <param name="shipment">Required parameter: Shipment Object to book</param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public SHIPMENT AddShipment(SHIPMENT shipment)
+        /// <return>Returns the Shipment response from the API call</return>
+        public Shipment AddShipment(Shipment shipment)
         {
-            Task<SHIPMENT> t = AddShipmentAsync(shipment);
+            Task<Shipment> t = AddShipmentAsync(shipment);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -128,8 +128,8 @@ namespace TMSAPI.PCL.Controllers
         /// Add a Shipment to system
         /// </summary>
         /// <param name="shipment">Required parameter: Shipment Object to book</param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public async Task<SHIPMENT> AddShipmentAsync(SHIPMENT shipment)
+        /// <return>Returns the Shipment response from the API call</return>
+        public async Task<Shipment> AddShipmentAsync(Shipment shipment)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -164,7 +164,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<SHIPMENT>(_response.Body);
+                return APIHelper.JsonDeserialize<Shipment>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -243,10 +243,10 @@ namespace TMSAPI.PCL.Controllers
         /// Update Existing Shipment
         /// </summary>
         /// <param name="shipment">Required parameter: Example: </param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public SHIPMENT UpdateShipment(SHIPMENT shipment)
+        /// <return>Returns the Shipment response from the API call</return>
+        public Shipment UpdateShipment(Shipment shipment)
         {
-            Task<SHIPMENT> t = UpdateShipmentAsync(shipment);
+            Task<Shipment> t = UpdateShipmentAsync(shipment);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -255,8 +255,8 @@ namespace TMSAPI.PCL.Controllers
         /// Update Existing Shipment
         /// </summary>
         /// <param name="shipment">Required parameter: Example: </param>
-        /// <return>Returns the SHIPMENT response from the API call</return>
-        public async Task<SHIPMENT> UpdateShipmentAsync(SHIPMENT shipment)
+        /// <return>Returns the Shipment response from the API call</return>
+        public async Task<Shipment> UpdateShipmentAsync(Shipment shipment)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -291,7 +291,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<SHIPMENT>(_response.Body);
+                return APIHelper.JsonDeserialize<Shipment>(_response.Body);
             }
             catch (Exception _ex)
             {

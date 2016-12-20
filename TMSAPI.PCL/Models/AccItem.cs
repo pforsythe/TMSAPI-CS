@@ -17,61 +17,79 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class SHIPMENTREFERENCE : INotifyPropertyChanged 
+    public class AccItem : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private int rEFERENCETYPEID;
-        private string dESCRIPTION;
-        private string rEFERENCE;
+        private int accChargeId;
+        private string description;
+        private string longDescription;
+        private string accCode;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("REFERENCE_TYPE_ID")]
-        public int REFERENCETYPEID 
+        [JsonProperty("AccChargeId")]
+        public int AccChargeId 
         { 
             get 
             {
-                return this.rEFERENCETYPEID; 
+                return this.accChargeId; 
             } 
             set 
             {
-                this.rEFERENCETYPEID = value;
-                onPropertyChanged("REFERENCETYPEID");
+                this.accChargeId = value;
+                onPropertyChanged("AccChargeId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("DESCRIPTION")]
-        public string DESCRIPTION 
+        [JsonProperty("Description")]
+        public string Description 
         { 
             get 
             {
-                return this.dESCRIPTION; 
+                return this.description; 
             } 
             set 
             {
-                this.dESCRIPTION = value;
-                onPropertyChanged("DESCRIPTION");
+                this.description = value;
+                onPropertyChanged("Description");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("REFERENCE")]
-        public string REFERENCE 
+        [JsonProperty("LongDescription")]
+        public string LongDescription 
         { 
             get 
             {
-                return this.rEFERENCE; 
+                return this.longDescription; 
             } 
             set 
             {
-                this.rEFERENCE = value;
-                onPropertyChanged("REFERENCE");
+                this.longDescription = value;
+                onPropertyChanged("LongDescription");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("AccCode")]
+        public string AccCode 
+        { 
+            get 
+            {
+                return this.accCode; 
+            } 
+            set 
+            {
+                this.accCode = value;
+                onPropertyChanged("AccCode");
             }
         }
 

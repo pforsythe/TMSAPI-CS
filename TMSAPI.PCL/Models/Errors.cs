@@ -17,25 +17,25 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class PRINTABLES : INotifyPropertyChanged 
+    public class Errors : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private List<PRINTABLE> pRINTABLE;
+        private List<Error> error;
 
         /// <summary>
-        /// Collection of items that can be printed
+        /// Collection of Errors Returned from Process
         /// </summary>
-        [JsonProperty("PRINTABLE")]
-        public List<PRINTABLE> PRINTABLE 
+        [JsonProperty("Error")]
+        public List<Error> Error 
         { 
             get 
             {
-                return this.pRINTABLE; 
+                return this.error; 
             } 
             set 
             {
-                this.pRINTABLE = value;
-                onPropertyChanged("PRINTABLE");
+                this.error = value;
+                onPropertyChanged("Error");
             }
         }
 

@@ -17,246 +17,228 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class SHIPMENT : INotifyPropertyChanged 
+    public class Shipment : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string uSERID;
-        private int bILLTOTYPE = 0;
-        private string bILLCOMPANY;
-        private string bILLCONTACT;
-        private string bILLEMAIL;
-        private string bILLADDRESS1;
-        private string bILLCITY;
-        private string bILLSTATE;
-        private int bILLPOSTALCODE;
-        private string bILLCOUNTRY;
-        private int bILLPHONE;
-        private DateTime rEADYDATE;
-        private DateTime rEADYTIME;
-        private DateTime cLOSETIME;
-        private DateTime dATEENTERED;
-        private bool cONTAINSHAZMAT = false;
-        private int sERVICETYPE = 0;
-        private int cHARGETYPE = 0;
-        private string cOMMENTS;
-        private DateTime sERVICEDATE;
-        private bool tENDEREMAILON = true;
-        private bool iSTENDERED = false;
-        private bool sENDCONFIRM = true;
-        private bool aTTACHBOL = false;
-        private SHIPMENTSTOPS sHIPMENTSTOPS;
-        private SHIPMENTPIECES sHIPMENTPIECES;
-        private string sHIPMENTID;
-        private bool? iSDELETED = false;
-        private string cARRIERNAME;
-        private ACCCHARGES aCCCHARGES;
-        private ACCITEMS aCCITEMS;
-        private SHIPMENTREFERENCES sHIPMENTREFERENCES;
-        private PRINTABLES pRINTABLES;
-        private ERRORS eRRORS;
+        private string userId;
+        private int billToType = 0;
+        private string billCompany;
+        private string billContact;
+        private string billEmail;
+        private string billAddress1;
+        private string billCity;
+        private string billState;
+        private string billPostalCode;
+        private string billCountry;
+        private string billPhone;
+        private DateTime readyDate;
+        private DateTime readyTime;
+        private DateTime closeTime;
+        private DateTime dateEntered;
+        private bool containsHazmat = false;
+        private int serviceType = 0;
+        private int chargeType = 0;
+        private string comments;
+        private DateTime serviceDate;
+        private bool tenderEmailOn = true;
+        private bool isTendered = false;
+        private bool sendConfirm = true;
+        private bool attachBol = false;
+        private ShipmentStops shipmentStops;
+        private ShipmentPieces shipmentPieces;
+        private string shipmentId;
+        private bool? isDeleted = false;
+        private string carrierName;
+        private AccCharges accCharges;
+        private AccItems accItems;
+        private ShipmentReferences shipmentReferences;
+        private Printables printables;
+        private Errors errors;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("USER_ID")]
-        public string USERID 
+        [JsonProperty("UserId")]
+        public string UserId 
         { 
             get 
             {
-                return this.uSERID; 
+                return this.userId; 
             } 
             set 
             {
-                this.uSERID = value;
-                onPropertyChanged("USERID");
+                this.userId = value;
+                onPropertyChanged("UserId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILLTOTYPE")]
-        public int BILLTOTYPE 
+        [JsonProperty("BillToType")]
+        public int BillToType 
         { 
             get 
             {
-                return this.bILLTOTYPE; 
+                return this.billToType; 
             } 
             set 
             {
-                this.bILLTOTYPE = value;
-                onPropertyChanged("BILLTOTYPE");
+                this.billToType = value;
+                onPropertyChanged("BillToType");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_COMPANY")]
-        public string BILLCOMPANY 
+        [JsonProperty("BillCompany")]
+        public string BillCompany 
         { 
             get 
             {
-                return this.bILLCOMPANY; 
+                return this.billCompany; 
             } 
             set 
             {
-                this.bILLCOMPANY = value;
-                onPropertyChanged("BILLCOMPANY");
+                this.billCompany = value;
+                onPropertyChanged("BillCompany");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_CONTACT")]
-        public string BILLCONTACT 
+        [JsonProperty("BillContact")]
+        public string BillContact 
         { 
             get 
             {
-                return this.bILLCONTACT; 
+                return this.billContact; 
             } 
             set 
             {
-                this.bILLCONTACT = value;
-                onPropertyChanged("BILLCONTACT");
+                this.billContact = value;
+                onPropertyChanged("BillContact");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_EMAIL")]
-        public string BILLEMAIL 
+        [JsonProperty("BillEmail")]
+        public string BillEmail 
         { 
             get 
             {
-                return this.bILLEMAIL; 
+                return this.billEmail; 
             } 
             set 
             {
-                this.bILLEMAIL = value;
-                onPropertyChanged("BILLEMAIL");
+                this.billEmail = value;
+                onPropertyChanged("BillEmail");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_ADDRESS_1")]
-        public string BILLADDRESS1 
+        [JsonProperty("BillAddress1")]
+        public string BillAddress1 
         { 
             get 
             {
-                return this.bILLADDRESS1; 
+                return this.billAddress1; 
             } 
             set 
             {
-                this.bILLADDRESS1 = value;
-                onPropertyChanged("BILLADDRESS1");
+                this.billAddress1 = value;
+                onPropertyChanged("BillAddress1");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_CITY")]
-        public string BILLCITY 
+        [JsonProperty("BillCity")]
+        public string BillCity 
         { 
             get 
             {
-                return this.bILLCITY; 
+                return this.billCity; 
             } 
             set 
             {
-                this.bILLCITY = value;
-                onPropertyChanged("BILLCITY");
+                this.billCity = value;
+                onPropertyChanged("BillCity");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_STATE")]
-        public string BILLSTATE 
+        [JsonProperty("BillState")]
+        public string BillState 
         { 
             get 
             {
-                return this.bILLSTATE; 
+                return this.billState; 
             } 
             set 
             {
-                this.bILLSTATE = value;
-                onPropertyChanged("BILLSTATE");
+                this.billState = value;
+                onPropertyChanged("BillState");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_POSTAL_CODE")]
-        public int BILLPOSTALCODE 
+        [JsonProperty("BillPostalCode")]
+        public string BillPostalCode 
         { 
             get 
             {
-                return this.bILLPOSTALCODE; 
+                return this.billPostalCode; 
             } 
             set 
             {
-                this.bILLPOSTALCODE = value;
-                onPropertyChanged("BILLPOSTALCODE");
+                this.billPostalCode = value;
+                onPropertyChanged("BillPostalCode");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_COUNTRY")]
-        public string BILLCOUNTRY 
+        [JsonProperty("BillCountry")]
+        public string BillCountry 
         { 
             get 
             {
-                return this.bILLCOUNTRY; 
+                return this.billCountry; 
             } 
             set 
             {
-                this.bILLCOUNTRY = value;
-                onPropertyChanged("BILLCOUNTRY");
+                this.billCountry = value;
+                onPropertyChanged("BillCountry");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("BILL_PHONE")]
-        public int BILLPHONE 
+        [JsonProperty("BillPhone")]
+        public string BillPhone 
         { 
             get 
             {
-                return this.bILLPHONE; 
+                return this.billPhone; 
             } 
             set 
             {
-                this.bILLPHONE = value;
-                onPropertyChanged("BILLPHONE");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("READY_DATE")]
-        public DateTime READYDATE 
-        { 
-            get 
-            {
-                return this.rEADYDATE; 
-            } 
-            set 
-            {
-                this.rEADYDATE = value;
-                onPropertyChanged("READYDATE");
+                this.billPhone = value;
+                onPropertyChanged("BillPhone");
             }
         }
 
@@ -264,17 +246,17 @@ namespace TMSAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("READY_TIME")]
-        public DateTime READYTIME 
+        [JsonProperty("ReadyDate")]
+        public DateTime ReadyDate 
         { 
             get 
             {
-                return this.rEADYTIME; 
+                return this.readyDate; 
             } 
             set 
             {
-                this.rEADYTIME = value;
-                onPropertyChanged("READYTIME");
+                this.readyDate = value;
+                onPropertyChanged("ReadyDate");
             }
         }
 
@@ -282,17 +264,17 @@ namespace TMSAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("CLOSE_TIME")]
-        public DateTime CLOSETIME 
+        [JsonProperty("ReadyTime")]
+        public DateTime ReadyTime 
         { 
             get 
             {
-                return this.cLOSETIME; 
+                return this.readyTime; 
             } 
             set 
             {
-                this.cLOSETIME = value;
-                onPropertyChanged("CLOSETIME");
+                this.readyTime = value;
+                onPropertyChanged("ReadyTime");
             }
         }
 
@@ -300,85 +282,17 @@ namespace TMSAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("DATE_ENTERED")]
-        public DateTime DATEENTERED 
+        [JsonProperty("CloseTime")]
+        public DateTime CloseTime 
         { 
             get 
             {
-                return this.dATEENTERED; 
+                return this.closeTime; 
             } 
             set 
             {
-                this.dATEENTERED = value;
-                onPropertyChanged("DATEENTERED");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("CONTAINS_HAZMAT")]
-        public bool CONTAINSHAZMAT 
-        { 
-            get 
-            {
-                return this.cONTAINSHAZMAT; 
-            } 
-            set 
-            {
-                this.cONTAINSHAZMAT = value;
-                onPropertyChanged("CONTAINSHAZMAT");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("SERVICE_TYPE")]
-        public int SERVICETYPE 
-        { 
-            get 
-            {
-                return this.sERVICETYPE; 
-            } 
-            set 
-            {
-                this.sERVICETYPE = value;
-                onPropertyChanged("SERVICETYPE");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("CHARGE_TYPE")]
-        public int CHARGETYPE 
-        { 
-            get 
-            {
-                return this.cHARGETYPE; 
-            } 
-            set 
-            {
-                this.cHARGETYPE = value;
-                onPropertyChanged("CHARGETYPE");
-            }
-        }
-
-        /// <summary>
-        /// TODO: Write general description for this method
-        /// </summary>
-        [JsonProperty("COMMENTS")]
-        public string COMMENTS 
-        { 
-            get 
-            {
-                return this.cOMMENTS; 
-            } 
-            set 
-            {
-                this.cOMMENTS = value;
-                onPropertyChanged("COMMENTS");
+                this.closeTime = value;
+                onPropertyChanged("CloseTime");
             }
         }
 
@@ -386,255 +300,341 @@ namespace TMSAPI.PCL.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("SERVICE_DATE")]
-        public DateTime SERVICEDATE 
+        [JsonProperty("DateEntered")]
+        public DateTime DateEntered 
         { 
             get 
             {
-                return this.sERVICEDATE; 
+                return this.dateEntered; 
             } 
             set 
             {
-                this.sERVICEDATE = value;
-                onPropertyChanged("SERVICEDATE");
+                this.dateEntered = value;
+                onPropertyChanged("DateEntered");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("TENDER_EMAIL_ON")]
-        public bool TENDEREMAILON 
+        [JsonProperty("ContainsHazmat")]
+        public bool ContainsHazmat 
         { 
             get 
             {
-                return this.tENDEREMAILON; 
+                return this.containsHazmat; 
             } 
             set 
             {
-                this.tENDEREMAILON = value;
-                onPropertyChanged("TENDEREMAILON");
+                this.containsHazmat = value;
+                onPropertyChanged("ContainsHazmat");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("IS_TENDERED")]
-        public bool ISTENDERED 
+        [JsonProperty("ServiceType")]
+        public int ServiceType 
         { 
             get 
             {
-                return this.iSTENDERED; 
+                return this.serviceType; 
             } 
             set 
             {
-                this.iSTENDERED = value;
-                onPropertyChanged("ISTENDERED");
+                this.serviceType = value;
+                onPropertyChanged("ServiceType");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SEND_CONFIRM")]
-        public bool SENDCONFIRM 
+        [JsonProperty("ChargeType")]
+        public int ChargeType 
         { 
             get 
             {
-                return this.sENDCONFIRM; 
+                return this.chargeType; 
             } 
             set 
             {
-                this.sENDCONFIRM = value;
-                onPropertyChanged("SENDCONFIRM");
+                this.chargeType = value;
+                onPropertyChanged("ChargeType");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ATTACH_BOL")]
-        public bool ATTACHBOL 
+        [JsonProperty("Comments")]
+        public string Comments 
         { 
             get 
             {
-                return this.aTTACHBOL; 
+                return this.comments; 
             } 
             set 
             {
-                this.aTTACHBOL = value;
-                onPropertyChanged("ATTACHBOL");
+                this.comments = value;
+                onPropertyChanged("Comments");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SHIPMENT_STOPS")]
-        public SHIPMENTSTOPS SHIPMENTSTOPS 
+        [JsonConverter(typeof(IsoDateTimeConverter))]
+        [JsonProperty("ServiceDate")]
+        public DateTime ServiceDate 
         { 
             get 
             {
-                return this.sHIPMENTSTOPS; 
+                return this.serviceDate; 
             } 
             set 
             {
-                this.sHIPMENTSTOPS = value;
-                onPropertyChanged("SHIPMENTSTOPS");
+                this.serviceDate = value;
+                onPropertyChanged("ServiceDate");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SHIPMENT_PIECES")]
-        public SHIPMENTPIECES SHIPMENTPIECES 
+        [JsonProperty("TenderEmailOn")]
+        public bool TenderEmailOn 
         { 
             get 
             {
-                return this.sHIPMENTPIECES; 
+                return this.tenderEmailOn; 
             } 
             set 
             {
-                this.sHIPMENTPIECES = value;
-                onPropertyChanged("SHIPMENTPIECES");
+                this.tenderEmailOn = value;
+                onPropertyChanged("TenderEmailOn");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("IsTendered")]
+        public bool IsTendered 
+        { 
+            get 
+            {
+                return this.isTendered; 
+            } 
+            set 
+            {
+                this.isTendered = value;
+                onPropertyChanged("IsTendered");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("SendConfirm")]
+        public bool SendConfirm 
+        { 
+            get 
+            {
+                return this.sendConfirm; 
+            } 
+            set 
+            {
+                this.sendConfirm = value;
+                onPropertyChanged("SendConfirm");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("AttachBol")]
+        public bool AttachBol 
+        { 
+            get 
+            {
+                return this.attachBol; 
+            } 
+            set 
+            {
+                this.attachBol = value;
+                onPropertyChanged("AttachBol");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("ShipmentStops")]
+        public ShipmentStops ShipmentStops 
+        { 
+            get 
+            {
+                return this.shipmentStops; 
+            } 
+            set 
+            {
+                this.shipmentStops = value;
+                onPropertyChanged("ShipmentStops");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("ShipmentPieces")]
+        public ShipmentPieces ShipmentPieces 
+        { 
+            get 
+            {
+                return this.shipmentPieces; 
+            } 
+            set 
+            {
+                this.shipmentPieces = value;
+                onPropertyChanged("ShipmentPieces");
             }
         }
 
         /// <summary>
         /// Shipment
         /// </summary>
-        [JsonProperty("SHIPMENT_ID")]
-        public string SHIPMENTID 
+        [JsonProperty("ShipmentId")]
+        public string ShipmentId 
         { 
             get 
             {
-                return this.sHIPMENTID; 
+                return this.shipmentId; 
             } 
             set 
             {
-                this.sHIPMENTID = value;
-                onPropertyChanged("SHIPMENTID");
+                this.shipmentId = value;
+                onPropertyChanged("ShipmentId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ISDELETED")]
-        public bool? ISDELETED 
+        [JsonProperty("IsDeleted")]
+        public bool? IsDeleted 
         { 
             get 
             {
-                return this.iSDELETED; 
+                return this.isDeleted; 
             } 
             private set 
             {
-                this.iSDELETED = value;
-                onPropertyChanged("ISDELETED");
+                this.isDeleted = value;
+                onPropertyChanged("IsDeleted");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CARRIER_NAME")]
-        public string CARRIERNAME 
+        [JsonProperty("CarrierName")]
+        public string CarrierName 
         { 
             get 
             {
-                return this.cARRIERNAME; 
+                return this.carrierName; 
             } 
             set 
             {
-                this.cARRIERNAME = value;
-                onPropertyChanged("CARRIERNAME");
+                this.carrierName = value;
+                onPropertyChanged("CarrierName");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ACC_CHARGES")]
-        public ACCCHARGES ACCCHARGES 
+        [JsonProperty("AccCharges")]
+        public AccCharges AccCharges 
         { 
             get 
             {
-                return this.aCCCHARGES; 
+                return this.accCharges; 
             } 
             private set 
             {
-                this.aCCCHARGES = value;
-                onPropertyChanged("ACCCHARGES");
+                this.accCharges = value;
+                onPropertyChanged("AccCharges");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ACC_ITEMS")]
-        public ACCITEMS ACCITEMS 
+        [JsonProperty("AccItems")]
+        public AccItems AccItems 
         { 
             get 
             {
-                return this.aCCITEMS; 
+                return this.accItems; 
             } 
             set 
             {
-                this.aCCITEMS = value;
-                onPropertyChanged("ACCITEMS");
+                this.accItems = value;
+                onPropertyChanged("AccItems");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("SHIPMENT_REFERENCES")]
-        public SHIPMENTREFERENCES SHIPMENTREFERENCES 
+        [JsonProperty("ShipmentReferences")]
+        public ShipmentReferences ShipmentReferences 
         { 
             get 
             {
-                return this.sHIPMENTREFERENCES; 
+                return this.shipmentReferences; 
             } 
             set 
             {
-                this.sHIPMENTREFERENCES = value;
-                onPropertyChanged("SHIPMENTREFERENCES");
+                this.shipmentReferences = value;
+                onPropertyChanged("ShipmentReferences");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("PRINTABLES")]
-        public PRINTABLES PRINTABLES 
+        [JsonProperty("Printables")]
+        public Printables Printables 
         { 
             get 
             {
-                return this.pRINTABLES; 
+                return this.printables; 
             } 
             set 
             {
-                this.pRINTABLES = value;
-                onPropertyChanged("PRINTABLES");
+                this.printables = value;
+                onPropertyChanged("Printables");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ERRORS")]
-        public ERRORS ERRORS 
+        [JsonProperty("Errors")]
+        public Errors Errors 
         { 
             get 
             {
-                return this.eRRORS; 
+                return this.errors; 
             } 
             set 
             {
-                this.eRRORS = value;
-                onPropertyChanged("ERRORS");
+                this.errors = value;
+                onPropertyChanged("Errors");
             }
         }
 

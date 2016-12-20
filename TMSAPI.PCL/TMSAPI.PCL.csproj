@@ -10,7 +10,7 @@
     <AssemblyName>TMSAPI.PCL</AssemblyName>
     <OutputType>Library</OutputType>
     <OutputPath>bin/DEBUG/</OutputPath>
-    <ProjectGuid>{98c2169d-b43f-442b-8715-cbe4d2bcd6c3}</ProjectGuid>
+    <ProjectGuid>{07e64dde-1e61-4089-960c-c7183ceace6f}</ProjectGuid>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
     <NuGetPackageImportStamp>ee2bb91c</NuGetPackageImportStamp>
@@ -73,28 +73,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\SHIPMENT.cs" />
-    <Compile Include="Models\CONTAINER.cs" />
-    <Compile Include="Models\ORDER.cs" />
-    <Compile Include="Models\RATE.cs" />
-    <Compile Include="Models\QUOTE.cs" />
-    <Compile Include="Models\SHIPMENTREFERENCE.cs" />
-    <Compile Include="Models\PRINTABLES.cs" />
-    <Compile Include="Models\PRINTABLE.cs" />
-    <Compile Include="Models\ERROR.cs" />
-    <Compile Include="Models\HAZMAT.cs" />
-    <Compile Include="Models\ERRORS.cs" />
-    <Compile Include="Models\ACCITEM.cs" />
-    <Compile Include="Models\ACCITEMS.cs" />
-    <Compile Include="Models\ACCCHARGE.cs" />
-    <Compile Include="Models\ACCCHARGES.cs" />
-    <Compile Include="Models\SHIPMENTPIECE.cs" />
-    <Compile Include="Models\SHIPMENTPIECES.cs" />
-    <Compile Include="Models\SHIPMENTSTOP.cs" />
-    <Compile Include="Models\SHIPMENTSTOPS.cs" />
-    <Compile Include="Models\SHIPMENTREFERENCES.cs" />
-    <Compile Include="Models\TRACKING.cs" />
-    <Compile Include="Models\STOPTYPEEnum.cs" />
+    <Compile Include="Models\Shipment.cs" />
+    <Compile Include="Models\Container.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Rate.cs" />
+    <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\ShipmentReference.cs" />
+    <Compile Include="Models\Printables.cs" />
+    <Compile Include="Models\Printable.cs" />
+    <Compile Include="Models\Error.cs" />
+    <Compile Include="Models\Hazmat.cs" />
+    <Compile Include="Models\Errors.cs" />
+    <Compile Include="Models\AccItem.cs" />
+    <Compile Include="Models\AccItems.cs" />
+    <Compile Include="Models\AccCharge.cs" />
+    <Compile Include="Models\AccCharges.cs" />
+    <Compile Include="Models\ShipmentPiece.cs" />
+    <Compile Include="Models\ShipmentPieces.cs" />
+    <Compile Include="Models\ShipmentStop.cs" />
+    <Compile Include="Models\ShipmentStops.cs" />
+    <Compile Include="Models\ShipmentReferences.cs" />
+    <Compile Include="Models\Tracking.cs" />
+    <Compile Include="Models\StopTypeEnum.cs" />
     <Compile Include="Controllers\OtherController.cs" />
     <Compile Include="Controllers\ShipmentController.cs" />
     <Compile Include="Controllers\QuoteController.cs" />

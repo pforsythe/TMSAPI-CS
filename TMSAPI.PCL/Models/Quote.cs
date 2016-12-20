@@ -17,102 +17,102 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class QUOTE : INotifyPropertyChanged 
+    public class Quote : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string uSERID;
-        private string oRIGPOSTALCODE;
-        private string dESTPOSTALCODE;
-        private int sERVICETYPE = 0;
-        private int cHARGETYPE = 0;
-        private DateTime qUOTEDATE;
-        private SHIPMENTPIECES pIECES;
-        private ERRORS eRRORS;
-        private string sYSTEMUSERID;
-        private List<RATE> rATES;
+        private string userId;
+        private string origPostalCode;
+        private string destPostalCode;
+        private int serviceType = 0;
+        private int chargeType = 0;
+        private DateTime quoteDate;
+        private ShipmentPieces pieces;
+        private Errors errors;
+        private string systemUserId;
+        private List<Rate> rates;
 
         /// <summary>
         /// User for the quote
         /// </summary>
-        [JsonProperty("USER_ID")]
-        public string USERID 
+        [JsonProperty("UserId")]
+        public string UserId 
         { 
             get 
             {
-                return this.uSERID; 
+                return this.userId; 
             } 
             set 
             {
-                this.uSERID = value;
-                onPropertyChanged("USERID");
+                this.userId = value;
+                onPropertyChanged("UserId");
             }
         }
 
         /// <summary>
         /// Origin Postal Code
         /// </summary>
-        [JsonProperty("ORIG_POSTAL_CODE")]
-        public string ORIGPOSTALCODE 
+        [JsonProperty("OrigPostalCode")]
+        public string OrigPostalCode 
         { 
             get 
             {
-                return this.oRIGPOSTALCODE; 
+                return this.origPostalCode; 
             } 
             set 
             {
-                this.oRIGPOSTALCODE = value;
-                onPropertyChanged("ORIGPOSTALCODE");
+                this.origPostalCode = value;
+                onPropertyChanged("OrigPostalCode");
             }
         }
 
         /// <summary>
         /// Destination Postal Code
         /// </summary>
-        [JsonProperty("DEST_POSTAL_CODE")]
-        public string DESTPOSTALCODE 
+        [JsonProperty("DestPostalCode")]
+        public string DestPostalCode 
         { 
             get 
             {
-                return this.dESTPOSTALCODE; 
+                return this.destPostalCode; 
             } 
             set 
             {
-                this.dESTPOSTALCODE = value;
-                onPropertyChanged("DESTPOSTALCODE");
+                this.destPostalCode = value;
+                onPropertyChanged("DestPostalCode");
             }
         }
 
         /// <summary>
         /// Service Type For Quote
         /// </summary>
-        [JsonProperty("SERVICE_TYPE")]
-        public int SERVICETYPE 
+        [JsonProperty("ServiceType")]
+        public int ServiceType 
         { 
             get 
             {
-                return this.sERVICETYPE; 
+                return this.serviceType; 
             } 
             set 
             {
-                this.sERVICETYPE = value;
-                onPropertyChanged("SERVICETYPE");
+                this.serviceType = value;
+                onPropertyChanged("ServiceType");
             }
         }
 
         /// <summary>
         /// Charge Type For Quote
         /// </summary>
-        [JsonProperty("CHARGE_TYPE")]
-        public int CHARGETYPE 
+        [JsonProperty("ChargeType")]
+        public int ChargeType 
         { 
             get 
             {
-                return this.cHARGETYPE; 
+                return this.chargeType; 
             } 
             set 
             {
-                this.cHARGETYPE = value;
-                onPropertyChanged("CHARGETYPE");
+                this.chargeType = value;
+                onPropertyChanged("ChargeType");
             }
         }
 
@@ -120,85 +120,85 @@ namespace TMSAPI.PCL.Models
         /// Date quote is for
         /// </summary>
         [JsonConverter(typeof(IsoDateTimeConverter))]
-        [JsonProperty("QUOTE_DATE")]
-        public DateTime QUOTEDATE 
+        [JsonProperty("QuoteDate")]
+        public DateTime QuoteDate 
         { 
             get 
             {
-                return this.qUOTEDATE; 
+                return this.quoteDate; 
             } 
             set 
             {
-                this.qUOTEDATE = value;
-                onPropertyChanged("QUOTEDATE");
+                this.quoteDate = value;
+                onPropertyChanged("QuoteDate");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("PIECES")]
-        public SHIPMENTPIECES PIECES 
+        [JsonProperty("Pieces")]
+        public ShipmentPieces Pieces 
         { 
             get 
             {
-                return this.pIECES; 
+                return this.pieces; 
             } 
             set 
             {
-                this.pIECES = value;
-                onPropertyChanged("PIECES");
+                this.pieces = value;
+                onPropertyChanged("Pieces");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ERRORS")]
-        public ERRORS ERRORS 
+        [JsonProperty("Errors")]
+        public Errors Errors 
         { 
             get 
             {
-                return this.eRRORS; 
+                return this.errors; 
             } 
             set 
             {
-                this.eRRORS = value;
-                onPropertyChanged("ERRORS");
+                this.errors = value;
+                onPropertyChanged("Errors");
             }
         }
 
         /// <summary>
         /// Admin user requesting quote
         /// </summary>
-        [JsonProperty("SYSTEM_USER_ID")]
-        public string SYSTEMUSERID 
+        [JsonProperty("SystemUserId")]
+        public string SystemUserId 
         { 
             get 
             {
-                return this.sYSTEMUSERID; 
+                return this.systemUserId; 
             } 
             set 
             {
-                this.sYSTEMUSERID = value;
-                onPropertyChanged("SYSTEMUSERID");
+                this.systemUserId = value;
+                onPropertyChanged("SystemUserId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("RATES")]
-        public List<RATE> RATES 
+        [JsonProperty("Rates")]
+        public List<Rate> Rates 
         { 
             get 
             {
-                return this.rATES; 
+                return this.rates; 
             } 
             set 
             {
-                this.rATES = value;
-                onPropertyChanged("RATES");
+                this.rates = value;
+                onPropertyChanged("Rates");
             }
         }
 

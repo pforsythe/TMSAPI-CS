@@ -53,11 +53,11 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get a list of rates back
         /// </summary>
-        /// <param name="qUOTE">Required parameter: Example: </param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public QUOTE CreateGetQuote(QUOTE qUOTE)
+        /// <param name="quote">Required parameter: Example: </param>
+        /// <return>Returns the Quote response from the API call</return>
+        public Quote CreateGetQuote(Quote quote)
         {
-            Task<QUOTE> t = CreateGetQuoteAsync(qUOTE);
+            Task<Quote> t = CreateGetQuoteAsync(quote);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -65,9 +65,9 @@ namespace TMSAPI.PCL.Controllers
         /// <summary>
         /// Get a list of rates back
         /// </summary>
-        /// <param name="qUOTE">Required parameter: Example: </param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public async Task<QUOTE> CreateGetQuoteAsync(QUOTE qUOTE)
+        /// <param name="quote">Required parameter: Example: </param>
+        /// <return>Returns the Quote response from the API call</return>
+        public async Task<Quote> CreateGetQuoteAsync(Quote quote)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -89,7 +89,7 @@ namespace TMSAPI.PCL.Controllers
             };
 
             //append body params
-            var _body = APIHelper.JsonSerialize(qUOTE);
+            var _body = APIHelper.JsonSerialize(quote);
 
             //prepare the API call request to fetch the response
             HttpRequest _request = ClientInstance.PostBody(_queryUrl, _headers, _body, Configuration.BasicAuthUserName, Configuration.BasicAuthPassword);
@@ -102,7 +102,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<QUOTE>(_response.Body);
+                return APIHelper.JsonDeserialize<Quote>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -114,10 +114,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of a Quote
         /// </summary>
         /// <param name="quoteId">Required parameter: Quote Id for quote you want details for</param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public QUOTE GetQuoteDetails(string quoteId)
+        /// <return>Returns the Quote response from the API call</return>
+        public Quote GetQuoteDetails(string quoteId)
         {
-            Task<QUOTE> t = GetQuoteDetailsAsync(quoteId);
+            Task<Quote> t = GetQuoteDetailsAsync(quoteId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -126,8 +126,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get Details of a Quote
         /// </summary>
         /// <param name="quoteId">Required parameter: Quote Id for quote you want details for</param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public async Task<QUOTE> GetQuoteDetailsAsync(string quoteId)
+        /// <return>Returns the Quote response from the API call</return>
+        public async Task<Quote> GetQuoteDetailsAsync(string quoteId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -164,7 +164,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<QUOTE>(_response.Body);
+                return APIHelper.JsonDeserialize<Quote>(_response.Body);
             }
             catch (Exception _ex)
             {
@@ -176,10 +176,10 @@ namespace TMSAPI.PCL.Controllers
         /// Get All Quotes in a Group
         /// </summary>
         /// <param name="quoteGroupId">Required parameter: Quote Group Id of Quotes you want details for</param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public QUOTE GetQuoteGroup(int quoteGroupId)
+        /// <return>Returns the Quote response from the API call</return>
+        public Quote GetQuoteGroup(int quoteGroupId)
         {
-            Task<QUOTE> t = GetQuoteGroupAsync(quoteGroupId);
+            Task<Quote> t = GetQuoteGroupAsync(quoteGroupId);
             APIHelper.RunTaskSynchronously(t);
             return t.Result;
         }
@@ -188,8 +188,8 @@ namespace TMSAPI.PCL.Controllers
         /// Get All Quotes in a Group
         /// </summary>
         /// <param name="quoteGroupId">Required parameter: Quote Group Id of Quotes you want details for</param>
-        /// <return>Returns the QUOTE response from the API call</return>
-        public async Task<QUOTE> GetQuoteGroupAsync(int quoteGroupId)
+        /// <return>Returns the Quote response from the API call</return>
+        public async Task<Quote> GetQuoteGroupAsync(int quoteGroupId)
         {
             //the base uri for api requestss
             string _baseUri = Configuration.GetBaseURI();
@@ -226,7 +226,7 @@ namespace TMSAPI.PCL.Controllers
 
             try
             {
-                return APIHelper.JsonDeserialize<QUOTE>(_response.Body);
+                return APIHelper.JsonDeserialize<Quote>(_response.Body);
             }
             catch (Exception _ex)
             {

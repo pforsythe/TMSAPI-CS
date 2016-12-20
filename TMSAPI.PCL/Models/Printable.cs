@@ -17,43 +17,43 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class PRINTABLE : INotifyPropertyChanged 
+    public class Printable : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private string uRL;
-        private string lABEL;
+        private string url;
+        private string label;
 
         /// <summary>
         /// URL to BOL document
         /// </summary>
-        [JsonProperty("URL")]
-        public string URL 
+        [JsonProperty("Url")]
+        public string Url 
         { 
             get 
             {
-                return this.uRL; 
+                return this.url; 
             } 
             set 
             {
-                this.uRL = value;
-                onPropertyChanged("URL");
+                this.url = value;
+                onPropertyChanged("Url");
             }
         }
 
         /// <summary>
         /// url to labels for printing
         /// </summary>
-        [JsonProperty("LABEL")]
-        public string LABEL 
+        [JsonProperty("Label")]
+        public string Label 
         { 
             get 
             {
-                return this.lABEL; 
+                return this.label; 
             } 
             set 
             {
-                this.lABEL = value;
-                onPropertyChanged("LABEL");
+                this.label = value;
+                onPropertyChanged("Label");
             }
         }
 

@@ -17,31 +17,31 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class RATE : INotifyPropertyChanged 
+    public class Rate : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
         private bool mdefault = false;
-        private string qUOTEID;
-        private string cARRIERID;
-        private string sCAC;
-        private string cARRIERNAME;
-        private int cONTRACTID;
-        private string dESCRIPTION;
-        private int sERVICEDAYS;
-        private double bASERATE;
-        private double fUELSURCHARGE;
-        private double oTHERACC;
-        private double tOTALRATE;
-        private double sELLBASERATE;
-        private double sELLFUELSURCHARGE;
-        private double sELLOTHERACC;
-        private double sELLTOTALRATE;
-        private ACCITEMS aCCITEMS;
+        private string quoteId;
+        private string carrierId;
+        private string scac;
+        private string carrierName;
+        private int contractId;
+        private string description;
+        private int serviceDays;
+        private double baseRate;
+        private double fuelSurcharge;
+        private double otherAcc;
+        private double totalRate;
+        private double sellBaseRate;
+        private double sellFuelSurcharge;
+        private double sellOtherAcc;
+        private double sellTotalRate;
+        private AccItems accitems;
 
         /// <summary>
         /// If this is the selected rate
         /// </summary>
-        [JsonProperty("default")]
+        [JsonProperty("Default")]
         public bool Default 
         { 
             get 
@@ -58,272 +58,272 @@ namespace TMSAPI.PCL.Models
         /// <summary>
         /// Quote Id
         /// </summary>
-        [JsonProperty("QUOTE_ID")]
-        public string QUOTEID 
+        [JsonProperty("QuoteId")]
+        public string QuoteId 
         { 
             get 
             {
-                return this.qUOTEID; 
+                return this.quoteId; 
             } 
             set 
             {
-                this.qUOTEID = value;
-                onPropertyChanged("QUOTEID");
+                this.quoteId = value;
+                onPropertyChanged("QuoteId");
             }
         }
 
         /// <summary>
         /// ID of the Carrier
         /// </summary>
-        [JsonProperty("CARRIER_ID")]
-        public string CARRIERID 
+        [JsonProperty("CarrierId")]
+        public string CarrierId 
         { 
             get 
             {
-                return this.cARRIERID; 
+                return this.carrierId; 
             } 
             set 
             {
-                this.cARRIERID = value;
-                onPropertyChanged("CARRIERID");
+                this.carrierId = value;
+                onPropertyChanged("CarrierId");
             }
         }
 
         /// <summary>
         /// SCAC of the Carrier
         /// </summary>
-        [JsonProperty("SCAC")]
-        public string SCAC 
+        [JsonProperty("Scac")]
+        public string Scac 
         { 
             get 
             {
-                return this.sCAC; 
+                return this.scac; 
             } 
             set 
             {
-                this.sCAC = value;
-                onPropertyChanged("SCAC");
+                this.scac = value;
+                onPropertyChanged("Scac");
             }
         }
 
         /// <summary>
         /// Name of the Carrier
         /// </summary>
-        [JsonProperty("CARRIER_NAME")]
-        public string CARRIERNAME 
+        [JsonProperty("CarrierName")]
+        public string CarrierName 
         { 
             get 
             {
-                return this.cARRIERNAME; 
+                return this.carrierName; 
             } 
             set 
             {
-                this.cARRIERNAME = value;
-                onPropertyChanged("CARRIERNAME");
+                this.carrierName = value;
+                onPropertyChanged("CarrierName");
             }
         }
 
         /// <summary>
         /// Id of contract used
         /// </summary>
-        [JsonProperty("CONTRACT_ID")]
-        public int CONTRACTID 
+        [JsonProperty("ContractId")]
+        public int ContractId 
         { 
             get 
             {
-                return this.cONTRACTID; 
+                return this.contractId; 
             } 
             set 
             {
-                this.cONTRACTID = value;
-                onPropertyChanged("CONTRACTID");
+                this.contractId = value;
+                onPropertyChanged("ContractId");
             }
         }
 
         /// <summary>
         /// Description of contract used
         /// </summary>
-        [JsonProperty("DESCRIPTION")]
-        public string DESCRIPTION 
+        [JsonProperty("Description")]
+        public string Description 
         { 
             get 
             {
-                return this.dESCRIPTION; 
+                return this.description; 
             } 
             set 
             {
-                this.dESCRIPTION = value;
-                onPropertyChanged("DESCRIPTION");
+                this.description = value;
+                onPropertyChanged("Description");
             }
         }
 
         /// <summary>
         /// Number of days to deliver item
         /// </summary>
-        [JsonProperty("SERVICE_DAYS")]
-        public int SERVICEDAYS 
+        [JsonProperty("ServiceDays")]
+        public int ServiceDays 
         { 
             get 
             {
-                return this.sERVICEDAYS; 
+                return this.serviceDays; 
             } 
             set 
             {
-                this.sERVICEDAYS = value;
-                onPropertyChanged("SERVICEDAYS");
+                this.serviceDays = value;
+                onPropertyChanged("ServiceDays");
             }
         }
 
         /// <summary>
         /// Base Charge amount
         /// </summary>
-        [JsonProperty("BASE_RATE")]
-        public double BASERATE 
+        [JsonProperty("BaseRate")]
+        public double BaseRate 
         { 
             get 
             {
-                return this.bASERATE; 
+                return this.baseRate; 
             } 
             set 
             {
-                this.bASERATE = value;
-                onPropertyChanged("BASERATE");
+                this.baseRate = value;
+                onPropertyChanged("BaseRate");
             }
         }
 
         /// <summary>
         /// Fuel Surcharge amount
         /// </summary>
-        [JsonProperty("FUEL_SURCHARGE")]
-        public double FUELSURCHARGE 
+        [JsonProperty("FuelSurcharge")]
+        public double FuelSurcharge 
         { 
             get 
             {
-                return this.fUELSURCHARGE; 
+                return this.fuelSurcharge; 
             } 
             set 
             {
-                this.fUELSURCHARGE = value;
-                onPropertyChanged("FUELSURCHARGE");
+                this.fuelSurcharge = value;
+                onPropertyChanged("FuelSurcharge");
             }
         }
 
         /// <summary>
         /// Total of Acc charges other than Base and Fuel
         /// </summary>
-        [JsonProperty("OTHER_ACC")]
-        public double OTHERACC 
+        [JsonProperty("OtherAcc")]
+        public double OtherAcc 
         { 
             get 
             {
-                return this.oTHERACC; 
+                return this.otherAcc; 
             } 
             set 
             {
-                this.oTHERACC = value;
-                onPropertyChanged("OTHERACC");
+                this.otherAcc = value;
+                onPropertyChanged("OtherAcc");
             }
         }
 
         /// <summary>
         /// Total Rate
         /// </summary>
-        [JsonProperty("TOTAL_RATE")]
-        public double TOTALRATE 
+        [JsonProperty("TotalRate")]
+        public double TotalRate 
         { 
             get 
             {
-                return this.tOTALRATE; 
+                return this.totalRate; 
             } 
             set 
             {
-                this.tOTALRATE = value;
-                onPropertyChanged("TOTALRATE");
+                this.totalRate = value;
+                onPropertyChanged("TotalRate");
             }
         }
 
         /// <summary>
         /// Base Charge with markup applied
         /// </summary>
-        [JsonProperty("SELL_BASE_RATE")]
-        public double SELLBASERATE 
+        [JsonProperty("SellBaseRate")]
+        public double SellBaseRate 
         { 
             get 
             {
-                return this.sELLBASERATE; 
+                return this.sellBaseRate; 
             } 
             set 
             {
-                this.sELLBASERATE = value;
-                onPropertyChanged("SELLBASERATE");
+                this.sellBaseRate = value;
+                onPropertyChanged("SellBaseRate");
             }
         }
 
         /// <summary>
         /// Fuel Surcharge with markup applied
         /// </summary>
-        [JsonProperty("SELL_FUEL_SURCHARGE")]
-        public double SELLFUELSURCHARGE 
+        [JsonProperty("SellFuelSurcharge")]
+        public double SellFuelSurcharge 
         { 
             get 
             {
-                return this.sELLFUELSURCHARGE; 
+                return this.sellFuelSurcharge; 
             } 
             set 
             {
-                this.sELLFUELSURCHARGE = value;
-                onPropertyChanged("SELLFUELSURCHARGE");
+                this.sellFuelSurcharge = value;
+                onPropertyChanged("SellFuelSurcharge");
             }
         }
 
         /// <summary>
         /// Total of Acc charges other than Base and Fuel with markup applied
         /// </summary>
-        [JsonProperty("SELL_OTHER_ACC")]
-        public double SELLOTHERACC 
+        [JsonProperty("SellOtherAcc")]
+        public double SellOtherAcc 
         { 
             get 
             {
-                return this.sELLOTHERACC; 
+                return this.sellOtherAcc; 
             } 
             set 
             {
-                this.sELLOTHERACC = value;
-                onPropertyChanged("SELLOTHERACC");
+                this.sellOtherAcc = value;
+                onPropertyChanged("SellOtherAcc");
             }
         }
 
         /// <summary>
         /// Total Rate with markup applied
         /// </summary>
-        [JsonProperty("SELL_TOTAL_RATE")]
-        public double SELLTOTALRATE 
+        [JsonProperty("SellTotalRate")]
+        public double SellTotalRate 
         { 
             get 
             {
-                return this.sELLTOTALRATE; 
+                return this.sellTotalRate; 
             } 
             set 
             {
-                this.sELLTOTALRATE = value;
-                onPropertyChanged("SELLTOTALRATE");
+                this.sellTotalRate = value;
+                onPropertyChanged("SellTotalRate");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("ACC_ITEMS")]
-        public ACCITEMS ACCITEMS 
+        [JsonProperty("Accitems")]
+        public AccItems Accitems 
         { 
             get 
             {
-                return this.aCCITEMS; 
+                return this.accitems; 
             } 
             set 
             {
-                this.aCCITEMS = value;
-                onPropertyChanged("ACCITEMS");
+                this.accitems = value;
+                onPropertyChanged("Accitems");
             }
         }
 

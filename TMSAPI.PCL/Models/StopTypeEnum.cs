@@ -14,7 +14,7 @@ using TMSAPI.PCL.Utilities;
 namespace TMSAPI.PCL.Models
 {
     [JsonConverter(typeof(StringValuedEnumConverter))]
-    public enum STOPTYPEEnum
+    public enum StopTypeEnum
     {
         ORIG, //TODO: Write general description for this method
         DEST, //TODO: Write general description for this method
@@ -22,27 +22,27 @@ namespace TMSAPI.PCL.Models
     }
 
     /// <summary>
-    /// Helper for the enum type STOPTYPEEnum
+    /// Helper for the enum type StopTypeEnum
     /// </summary>
-    public static class STOPTYPEEnumHelper
+    public static class StopTypeEnumHelper
     {
         //string values corresponding the enum elements
         private static List<string> stringValues = new List<string> { "ORIG", "DEST", "STOP" };
 
         /// <summary>
-        /// Converts a STOPTYPEEnum value to a corresponding string value
+        /// Converts a StopTypeEnum value to a corresponding string value
         /// </summary>
-        /// <param name="enumValue">The STOPTYPEEnum value to convert</param>
+        /// <param name="enumValue">The StopTypeEnum value to convert</param>
         /// <returns>The representative string value</returns>
-        public static string ToValue(STOPTYPEEnum enumValue)
+        public static string ToValue(StopTypeEnum enumValue)
         {
             switch(enumValue)
             {
                 //only valid enum elements can be used
                 //this is necessary to avoid errors
-                case STOPTYPEEnum.ORIG:
-                case STOPTYPEEnum.DEST:
-                case STOPTYPEEnum.STOP:
+                case StopTypeEnum.ORIG:
+                case StopTypeEnum.DEST:
+                case StopTypeEnum.STOP:
                     return stringValues[(int)enumValue];
 
                 //an invalid enum value was requested
@@ -52,11 +52,11 @@ namespace TMSAPI.PCL.Models
         }
 
         /// <summary>
-        /// Convert a list of STOPTYPEEnum values to a list of strings
+        /// Convert a list of StopTypeEnum values to a list of strings
         /// </summary>
-        /// <param name="enumValues">The list of STOPTYPEEnum values to convert</param>
+        /// <param name="enumValues">The list of StopTypeEnum values to convert</param>
         /// <returns>The list of representative string values</returns>
-        public static List<string> ToValue(List<STOPTYPEEnum> enumValues)
+        public static List<string> ToValue(List<StopTypeEnum> enumValues)
         {
             if (null == enumValues)
                 return null;
@@ -65,17 +65,17 @@ namespace TMSAPI.PCL.Models
         }
 
         /// <summary>
-        /// Converts a string value into STOPTYPEEnum value
+        /// Converts a string value into StopTypeEnum value
         /// </summary>
         /// <param name="value">The string value to parse</param>
-        /// <returns>The parsed STOPTYPEEnum value</returns>
-        public static STOPTYPEEnum ParseString(string value)
+        /// <returns>The parsed StopTypeEnum value</returns>
+        public static StopTypeEnum ParseString(string value)
         {
             int index = stringValues.IndexOf(value);
             if(index < 0)
-                throw new InvalidCastException(string.Format("Unable to cast value: {0} to type STOPTYPEEnum", value));
+                throw new InvalidCastException(string.Format("Unable to cast value: {0} to type StopTypeEnum", value));
 
-            return (STOPTYPEEnum) index;
+            return (StopTypeEnum) index;
         }
     }
 } 

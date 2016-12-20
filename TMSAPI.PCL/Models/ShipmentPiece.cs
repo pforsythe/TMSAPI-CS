@@ -17,205 +17,205 @@ using TMSAPI.PCL.Utilities;
 
 namespace TMSAPI.PCL.Models
 {
-    public class SHIPMENTPIECE : INotifyPropertyChanged 
+    public class ShipmentPiece : INotifyPropertyChanged 
     {
         // These fields hold the values for the public properties.
-        private int uNITS;
-        private string cONTAINERID;
-        private string cONTAINERDESC;
-        private string dESCRIPTION;
-        private int wEIGHT;
-        private bool iSHAZMAT = false;
-        private string cLASSNUMBER;
-        private string oPSCLASS;
-        private int? tOTALCUBE;
-        private string pACKAGECONTAINERID;
-        private string pACKAGECONTAINERDESC;
+        private int units;
+        private string containerId;
+        private string containerDesc;
+        private string description;
+        private int weight;
+        private bool isHazmat = false;
+        private string classNumber;
+        private string opsClass;
+        private double? totalCube;
+        private string packageContainerId;
+        private string packageContainerDesc;
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("UNITS")]
-        public int UNITS 
+        [JsonProperty("Units")]
+        public int Units 
         { 
             get 
             {
-                return this.uNITS; 
+                return this.units; 
             } 
             set 
             {
-                this.uNITS = value;
-                onPropertyChanged("UNITS");
+                this.units = value;
+                onPropertyChanged("Units");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CONTAINER_ID")]
-        public string CONTAINERID 
+        [JsonProperty("ContainerId")]
+        public string ContainerId 
         { 
             get 
             {
-                return this.cONTAINERID; 
+                return this.containerId; 
             } 
             set 
             {
-                this.cONTAINERID = value;
-                onPropertyChanged("CONTAINERID");
+                this.containerId = value;
+                onPropertyChanged("ContainerId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("CONTAINER_DESC")]
-        public string CONTAINERDESC 
+        [JsonProperty("ContainerDesc")]
+        public string ContainerDesc 
         { 
             get 
             {
-                return this.cONTAINERDESC; 
+                return this.containerDesc; 
             } 
             set 
             {
-                this.cONTAINERDESC = value;
-                onPropertyChanged("CONTAINERDESC");
+                this.containerDesc = value;
+                onPropertyChanged("ContainerDesc");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("DESCRIPTION")]
-        public string DESCRIPTION 
+        [JsonProperty("Description")]
+        public string Description 
         { 
             get 
             {
-                return this.dESCRIPTION; 
+                return this.description; 
             } 
             set 
             {
-                this.dESCRIPTION = value;
-                onPropertyChanged("DESCRIPTION");
+                this.description = value;
+                onPropertyChanged("Description");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("WEIGHT")]
-        public int WEIGHT 
+        [JsonProperty("Weight")]
+        public int Weight 
         { 
             get 
             {
-                return this.wEIGHT; 
+                return this.weight; 
             } 
             set 
             {
-                this.wEIGHT = value;
-                onPropertyChanged("WEIGHT");
+                this.weight = value;
+                onPropertyChanged("Weight");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("IS_HAZMAT")]
-        public bool ISHAZMAT 
+        [JsonProperty("IsHazmat")]
+        public bool IsHazmat 
         { 
             get 
             {
-                return this.iSHAZMAT; 
+                return this.isHazmat; 
             } 
             set 
             {
-                this.iSHAZMAT = value;
-                onPropertyChanged("ISHAZMAT");
+                this.isHazmat = value;
+                onPropertyChanged("IsHazmat");
             }
         }
 
         /// <summary>
         /// Hazmat Class
         /// </summary>
-        [JsonProperty("CLASS_NUMBER")]
-        public string CLASSNUMBER 
+        [JsonProperty("ClassNumber")]
+        public string ClassNumber 
         { 
             get 
             {
-                return this.cLASSNUMBER; 
+                return this.classNumber; 
             } 
             set 
             {
-                this.cLASSNUMBER = value;
-                onPropertyChanged("CLASSNUMBER");
+                this.classNumber = value;
+                onPropertyChanged("ClassNumber");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("OPS_CLASS")]
-        public string OPSCLASS 
+        [JsonProperty("OpsClass")]
+        public string OpsClass 
         { 
             get 
             {
-                return this.oPSCLASS; 
+                return this.opsClass; 
             } 
             set 
             {
-                this.oPSCLASS = value;
-                onPropertyChanged("OPSCLASS");
+                this.opsClass = value;
+                onPropertyChanged("OpsClass");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("TOTAL_CUBE")]
-        public int? TOTALCUBE 
+        [JsonProperty("TotalCube")]
+        public double? TotalCube 
         { 
             get 
             {
-                return this.tOTALCUBE; 
+                return this.totalCube; 
             } 
             set 
             {
-                this.tOTALCUBE = value;
-                onPropertyChanged("TOTALCUBE");
+                this.totalCube = value;
+                onPropertyChanged("TotalCube");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("PACKAGE_CONTAINER_ID")]
-        public string PACKAGECONTAINERID 
+        [JsonProperty("PackageContainerId")]
+        public string PackageContainerId 
         { 
             get 
             {
-                return this.pACKAGECONTAINERID; 
+                return this.packageContainerId; 
             } 
             set 
             {
-                this.pACKAGECONTAINERID = value;
-                onPropertyChanged("PACKAGECONTAINERID");
+                this.packageContainerId = value;
+                onPropertyChanged("PackageContainerId");
             }
         }
 
         /// <summary>
         /// TODO: Write general description for this method
         /// </summary>
-        [JsonProperty("PACKAGE_CONTAINER_DESC")]
-        public string PACKAGECONTAINERDESC 
+        [JsonProperty("PackageContainerDesc")]
+        public string PackageContainerDesc 
         { 
             get 
             {
-                return this.pACKAGECONTAINERDESC; 
+                return this.packageContainerDesc; 
             } 
             set 
             {
-                this.pACKAGECONTAINERDESC = value;
-                onPropertyChanged("PACKAGECONTAINERDESC");
+                this.packageContainerDesc = value;
+                onPropertyChanged("PackageContainerDesc");
             }
         }
 
